@@ -135,16 +135,95 @@ parent(anne, magali).
 mere(X,Y) :- femme(X), parent(X,Y).
 ```
 
-== Système de type pour un $lambda$-calcul simple ($→$-introduction)
+== Système de type pour un $lambda$-calcul simple
+    
+#table(
+  columns: (20em,20em),
+  stroke: none,
+    $ ((X : T) in Γ) / (Γ ⊢ X : T) #pause $,
+    [
+        ```prolog
+        system(Γ ⊢ X : T) :-
+            atom(X),
+            in_gamma(X:T, Γ).
+        ```
+        #pause    
+    ],
+    v(1em),v(1em),
+    $ (Γ ⊢ X : T_1 → T_2 #h(1em) Γ ⊢ Y : T_1) / (Γ ⊢ X #h(5pt) Y : T_2) #pause $,
+    [
+        ```prolog
+        system(Γ ⊢ (X @ Y) : T2) :-
+            system(Γ ⊢ X : (T1 → T2)),
+            system(Γ ⊢ Y : T1).
+        ```
+        #pause
+    ],
+    v(1em),v(1em),
+    $ (Γ,X:T_1 ⊢ Y : T_2) / (Γ ⊢ X ⇒ Y : T_1 → T_2) #pause $,   
+    [
+        ```prolog
+        system(Γ ⊢ (X ⇒ Y) : (T1 → T2)) :-
+            system((Γ,X:T1) ⊢ Y : T2).
+        ```
+    ],
+)
 
-$ (Γ ⊢ X : T_1 → T_2 #h(1em) Γ ⊢ Y : T_1) / (Γ ⊢ X #h(5pt) Y : T_2) $
+== Système de type pour un $lambda$-calcul simple
+    
+*Typage de la fonction identité*
+    
+```prolog
+?- system([] ⊢ (x ⇒ x) : T).
+T = (_A→_A),
+```
 
 #pause #v(1em)
- 
+
+*Application à la fonction identité sans connaitre les hypothèses*
+
+```prolog
+?- system(Γ ⊢ ((x ⇒ x) @ y) : T).
+Γ = (_, y:T)
+```
+
+#pause #v(1em)
+
+*Fonction d'application* (réification)
+
+```prolog
+?- system([] ⊢ (x ⇒ y ⇒ (x @ y)) : (T1 → T2)).
+T1 = T2, T2 = (_A→_B),
+```
+
+== Description de la règle d'emprunt capée à 35%
+
 #align(center)[
 ```prolog
-type_system(Γ ⊢ (X @ Y) : T2) :-
-    type_system(Γ ⊢ X : (T1 → T2)),
-    type_system(Γ ⊢ Y : T1).
+maxDebt(35).
+
+debt(family(NetSalary),monthly(Instalment),debtPercent(Percent)) :-
+    maxDebt(MaxDebt),
+    {Instalment =< MaxDebt / 100 * NetSalary},
+    {Percent = 100 * (Instalment / NetSalary)}.
 ```
-]
+]    
+
+== Description de la règle d'emprunt capée à 35%
+
+
+*Simple calcul de l'endettement*
+
+```prolog
+?- debt(family(4_500),monthly(1_500),debtPercent(P)).
+P = 33.333333333333336.
+```
+
+#pause #v(1em)
+
+*Proposition de mensualité à partir d'une base*
+
+```prolog
+?- debt(family(4_500),monthly(X),debtPercent(35)).
+X = 1575.0.
+```
