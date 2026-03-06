@@ -1,53 +1,61 @@
 /*
- * Cf. https://ncatlab.org/nlab/show/bidirectional+typechecking [TODO]
+ * Cf. https://ncatlab.org/nlab/show/bidirectional+typechecking
  */
 
-:- op(800, xfx, user:(->)).
-:- op(900, xfx, user:(=>)).
-:- op(800, xfx, user:(@)).
+:- op(800, xfy, user:(⊢)).
+:- op(800, yfx, user:(→)).
+:- op(900, xfy, user:(⇒)).
+:- op(800, yfx, user:(@)).
+:- op(800, yfx, user:(::)).
+
+in_gamma(X:T, (_,X:T)).
+in_gamma(B, (L,_)) :- in_gamma(B,L).
 
 /*
- *  (X : T) in Gamma
+ *  (X : T) in Γ
  *  ----------------
- *  Gamma |- X <= T
+ *  Γ ⊢ X <= T
  */
-type_system(Gamma, X, T, proof(gamma(X,T))) :-
-    nonvar(X),
-    member(X:T, Gamma),
-    !.
+type_system(Γ ⊢ X : T, proof(gamma(X,T))) :-
+    atom(X),
+    !,
+    in_gamma(X:T, Γ).
 
 /*
- *  Gamma |- X @ T1 -> T2   Gamma |- Y <= T1
+ *  Γ ⊢ X : T1 → T2   Γ ⊢ Y :  ΓT1
  *  ------------------------------------
- *  Gamma |- X Y => T2
+ *  Γ ⊢ X @ Y : T2
  */
-type_system(Gamma, X @ Y, T2, proof(abs,LOG1,LOG2)) :-
-    type_system(Gamma, X, T1 -> T2, LOG1),
-    type_system(Gamma, Y, T1, LOG2),
+type_system(Γ ⊢ (X @ Y) : T2, proof(abs,LOG1,LOG2)) :-
+    type_system(Γ ⊢ X : (T1 → T2), LOG1),
+    type_system(Γ ⊢ Y : T1, LOG2),
     !.
 
 /*
- *  Gamma,X:T1 |- T <= T2
+ *  Γ,X:T1 ⊢ T : T2
  *  ----------------------
- *  Gamma |- \X.T <= T1 -> T2
+ *  Γ ⊢ \X.T : T1 → T2
  */
-type_system(Gamma, X => T, T1 -> T2, proof(abs, LOG)) :-
-    append([X:T1], Gamma, NGamma),
-    type_system(NGamma, T, T2, LOG),
+type_system(Γ ⊢ (X ⇒ Y) : (T1 → T2), proof(abs, LOG)) :-
+    type_system((Γ,X:T1) ⊢ Y : T2, LOG),
     !.
 
 /* Error corner */
 
-type_system(Gamma, X, T, proof(error, Gamma, X, T )).
+type_system(Γ ⊢ X : T, proof(error, Γ, X, T )).
 
 /* Some examples
 
-    :- type_system([], x => x,T,L).
-    T = (_A->_A),
-    L = proof(abs, proof(gamma(x, _A))).
+    :- type_system([] ⊢ (x ⇒ x) : T,L).
+    T = (_A→_A),
+     = proof(abs, proof(gamma(x, _A))).
 
-    ?- type_system([y:int],(x => x) @ y,T,L).
+    ?- type_system(([],y:int) ⊢ ((x ⇒ x) @ y) : T, L).
     T = int,
     L = proof(abs, proof(abs, proof(gamma(x, int))), proof(gamma(y, int))).
+
+    ?- type_system([] ⊢ (x ⇒ y ⇒ (x @ y)) : (T1 → T2), L).
+    T1 = T2, T2 = (_A→_B),
+    L = proof(abs, proof(abs, proof(abs, proof(gamma(x, _A→_B)), proof(gamma(y, _A))))).
 
 */
