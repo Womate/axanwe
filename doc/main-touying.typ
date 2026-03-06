@@ -135,35 +135,16 @@ parent(anne, magali).
 mere(X,Y) :- femme(X), parent(X,Y).
 ```
 
-== Système de type pour un $lambda$-calcul simple (1/2)
+== Système de type pour un $lambda$-calcul simple ($→$-introduction)
 
-La règle d'élimination de $→$ suivante
+$ (Γ ⊢ X : T_1 → T_2 #h(1em) Γ ⊢ Y : T_1) / (Γ ⊢ X #h(5pt) Y : T_2) $
 
-$ (Γ ⊢ X : T_1 → T_2 #h(1em) Γ ⊢ Y : T_1) / (Γ ⊢ X #h(5pt) Y : T_2) $ #pause
+#pause #v(1em)
  
-peut-être simplement décrite par le prédicat suivant:
-
 #align(center)[
 ```prolog
 type_system(Γ ⊢ (X @ Y) : T2) :-
     type_system(Γ ⊢ X : (T1 → T2)),
-    type_system(Γ ⊢ Y : T1),
-    !.
-```
-]
-
-== Système de type pour un $lambda$-calcul simple (2/2)
-
-La règle d'introduction de $→$ suivante
-
-$ (Γ,X:T_1 ⊢ Y : T_2) / (Γ ⊢ X ⇒ Y : T_1 → T_2) $ #pause
- 
-peut-être simplement décrite par le prédicat suivant:
-
-#align(center)[
-```prolog
-type_system(Γ ⊢ (X ⇒ Y) : (T1 → T2)) :-
-    type_system((Γ,X:T1) ⊢ Y : T2),
-    !.
+    type_system(Γ ⊢ Y : T1).
 ```
 ]
