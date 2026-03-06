@@ -6,7 +6,6 @@
 :- op(800, yfx, user:(→)).
 :- op(900, xfy, user:(⇒)).
 :- op(800, yfx, user:(@)).
-:- op(800, yfx, user:(::)).
 
 in_gamma(X:T, (_,X:T)).
 in_gamma(B, (L,_)) :- in_gamma(B,L).
@@ -22,9 +21,9 @@ type_system(Γ ⊢ X : T, proof(gamma(X,T))) :-
     in_gamma(X:T, Γ).
 
 /*
- *  Γ ⊢ X : T1 → T2   Γ ⊢ Y :  ΓT1
- *  ------------------------------------
- *  Γ ⊢ X @ Y : T2
+ *  Γ ⊢ X : T1 → T2   Γ ⊢ Y : T1
+ *  ----------------------------
+ *  Γ ⊢ X Y : T2
  */
 type_system(Γ ⊢ (X @ Y) : T2, proof(abs,LOG1,LOG2)) :-
     type_system(Γ ⊢ X : (T1 → T2), LOG1),
@@ -33,8 +32,8 @@ type_system(Γ ⊢ (X @ Y) : T2, proof(abs,LOG1,LOG2)) :-
 
 /*
  *  Γ,X:T1 ⊢ T : T2
- *  ----------------------
- *  Γ ⊢ \X.T : T1 → T2
+ *  -------------------
+ *  Γ ⊢ X ⇒ T : T1 → T2
  */
 type_system(Γ ⊢ (X ⇒ Y) : (T1 → T2), proof(abs, LOG)) :-
     type_system((Γ,X:T1) ⊢ Y : T2, LOG),
