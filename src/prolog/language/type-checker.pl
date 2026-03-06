@@ -2,6 +2,22 @@
  * Cf. https://ncatlab.org/nlab/show/bidirectional+typechecking
  */
 
+/*
+
+    term    ::= ident               -- variable
+              | ident ⇒ term        -- abstraction
+              | term @ term         -- application
+
+    type    ::= ident               -- native type
+              | ident → term        -- function
+
+    gamma   ::= []                  -- no hypothesis
+              | gamma, ident:type   -- at least one hypothesis
+
+    premise ::= gamma ⊢ term : type
+
+*/
+
 :- op(800, xfy, user:(⊢)).
 :- op(800, yfx, user:(→)).
 :- op(900, xfy, user:(⇒)).
@@ -12,8 +28,8 @@ in_gamma(B, (L,_)) :- in_gamma(B,L).
 
 /*
  *  (X : T) in Γ
- *  ----------------
- *  Γ ⊢ X <= T
+ *  ------------
+ *  Γ ⊢ X : T
  */
 type_system(Γ ⊢ X : T, proof(gamma(X,T))) :-
     atom(X),
@@ -28,24 +44,26 @@ type_system(Γ ⊢ X : T, proof(gamma(X,T))) :-
 type_system(Γ ⊢ (X @ Y) : T2, proof(abs,LOG1,LOG2)) :-
     type_system(Γ ⊢ X : (T1 → T2), LOG1),
     type_system(Γ ⊢ Y : T1, LOG2),
+    acyclic_term(T1 → T2),
     !.
 
 /*
- *  Γ,X:T1 ⊢ T : T2
+ *  Γ,X:T1 ⊢ Y : T2
  *  -------------------
- *  Γ ⊢ X ⇒ T : T1 → T2
+ *  Γ ⊢ X ⇒ Y : T1 → T2
  */
 type_system(Γ ⊢ (X ⇒ Y) : (T1 → T2), proof(abs, LOG)) :-
     type_system((Γ,X:T1) ⊢ Y : T2, LOG),
+    acyclic_term(T1 → T2),
     !.
 
 /* Error corner */
 
-type_system(Γ ⊢ X : T, proof(error, Γ, X, T )).
+type_system(Γ ⊢ X : T, proof(error, Γ ⊢ X : T)).
 
 /* Some examples
 
-    :- type_system([] ⊢ (x ⇒ x) : T,L).
+    ?- type_system([] ⊢ (x ⇒ x) : T,L).
     T = (_A→_A),
      = proof(abs, proof(gamma(x, _A))).
 
@@ -53,8 +71,16 @@ type_system(Γ ⊢ X : T, proof(error, Γ, X, T )).
     T = int,
     L = proof(abs, proof(abs, proof(gamma(x, int))), proof(gamma(y, int))).
 
+    ?- type_system(Γ ⊢ ((x ⇒ x) @ y) : T, L).
+    Γ = (_, y:T),
+    L = proof(abs, proof(abs, proof(gamma(x, T))), proof(gamma(y, T))).
+
     ?- type_system([] ⊢ (x ⇒ y ⇒ (x @ y)) : (T1 → T2), L).
     T1 = T2, T2 = (_A→_B),
     L = proof(abs, proof(abs, proof(abs, proof(gamma(x, _A→_B)), proof(gamma(y, _A))))).
+
+    ?- type_system([] ⊢ (x ⇒ x @ x) : T, L).
+    T = (_A→_B),
+    L = proof(abs, proof(error, ([], x:_A)⊢(x@x):_B)).
 
 */
