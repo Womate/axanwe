@@ -27,9 +27,34 @@ TODO
 
 = Fondations
 
+== Le filtrage par motif
+
+```Java
+sealed interface Maybe<A> {
+    record Just<A>(A value) implements Maybe<A> {}
+    record Nothing<A>() implements Maybe<A> {}
+```
+#pause
+```Java
+
+    default <B> Maybe<B> map(Function<? super A, ? extends B> mapper) {
+        return switch (this) {
+            case Just<A>(var value) -> new Just<>(mapper.apply(value));
+            case Nothing<A>()  -> new Nothing<>();
+        };
+    }
+```
+#meanwhile
+```Java
+}
+```
+#pause
+*Le filtrage de* `Just<A>(var value)` *permet de capturer un fragment lié à* `value`
+
+
 == Unification
 
-Jacques Herbrand ~ 1930
+Jacques Herbrand \~ 1930
 
 #box[
     Trouver une substitution $sigma$ qui appliquée à deux termes les rend identiques
@@ -83,19 +108,28 @@ Système formel pour raisonner par *Gottlob Frege*. \
 ]
 
 == Programmation Logique
+#set page(background: image("assets/extrait-article.png", width: 130%, height: 130%))
 
 #table(
   columns: (auto, auto),
   inset: 10pt,
-  align: center,
+  align: (right,left),
   stroke: none,
-  image("assets/A-Colmerauer_web-800x423.jpg", width: 40%),
-  image("assets/Philippe_Roussel_informaticien.jpg", width: 40%),
-  "Alain Colmerauer",
-  "Philippe Roussel", 
+  image("assets/A-Colmerauer_web-800x423.jpg", width: 67%),
+  image("assets/Philippe_Roussel_informaticien.jpg", width: 60%),
 )
 
+#align(center)[
+    *#link(
+        "http://alain.colmerauer.free.fr/alcol/ArchivesPublications/HommeMachineFr/HoMa.pdf", 
+        "Un système de communication homme-machine en Français"
+    )* 
+    
+    Alain Colmerauer, Henri Kanoui, Philippe Roussel & Robert Pasero \~ 1972
+]
+
 == Prolog
+#set page(background: none)
 
 - Forme restreinte du calcul des prédicats #pause
 - Principe d'unification de termes
