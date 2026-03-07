@@ -107,7 +107,9 @@ Système formel pour raisonner par *Gottlob Frege*. \
   $ forall X.exists Y."parent"(X,Y) and "femme"(X) arrow.r.double "mere"(X,Y) $
 ]
 
-== Programmation Logique
+= Programmation Logique
+
+== Prolog
 #set page(background: image("assets/extrait-article.png", width: 130%, height: 130%))
 
 #table(
