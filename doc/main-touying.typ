@@ -107,6 +107,10 @@ Système formel pour raisonner par *Gottlob Frege*. \
   $ forall X.exists Y."parent"(X,Y) and "femme"(X) arrow.r.double "mere"(X,Y) $
 ]
 
+== Clauses de Horn
+
+TODO
+
 = Programmation Logique
 
 == Prolog
@@ -171,7 +175,12 @@ parent(anne, magali).
 mere(X,Y) :- femme(X), parent(X,Y).
 ```
 
+= Prolog en action !
+
+
 == Système de type pour un $lambda$-calcul simple
+  
+#pause    
     
 #table(
   columns: (20em,20em),
@@ -211,7 +220,10 @@ mere(X,Y) :- femme(X), parent(X,Y).
     
 ```prolog
 ?- system([] ⊢ (x ⇒ x) : T).
-T = (_A→_A),
+```
+#pause
+```prolog
+T = (_A→_A)
 ```
 
 #pause #v(1em)
@@ -220,6 +232,9 @@ T = (_A→_A),
 
 ```prolog
 ?- system(Γ ⊢ ((x ⇒ x) @ y) : T).
+```
+#pause
+```prolog
 Γ = (_, y:T)
 ```
 
@@ -229,7 +244,10 @@ T = (_A→_A),
 
 ```prolog
 ?- system([] ⊢ (x ⇒ y ⇒ (x @ y)) : (T1 → T2)).
-T1 = T2, T2 = (_A→_B),
+```
+#pause
+```prolog
+T1 = T2, T2 = (_A→_B)
 ```
 
 == Description de la règle d'emprunt capée à 35%
@@ -252,6 +270,9 @@ debt(family(NetSalary),monthly(Instalment),debtPercent(Percent)) :-
 
 ```prolog
 ?- debt(family(4_500),monthly(1_500),debtPercent(P)).
+```
+#pause
+```prolog
 P = 33.333333333333336.
 ```
 
@@ -261,5 +282,8 @@ P = 33.333333333333336.
 
 ```prolog
 ?- debt(family(4_500),monthly(X),debtPercent(35)).
+```
+#pause
+```prolog
 X = 1575.0.
 ```
