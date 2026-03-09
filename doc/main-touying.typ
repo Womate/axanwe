@@ -35,7 +35,7 @@ TODO
     radius: 2pt,
     width: auto,
 )[
-Le connexionnisme met de l’avant l’idée que c’est en entrainant la machine à apprendre qu’elle sera en mesure d’agir de manière intelligente.
+Le connexionnisme met en avant l’idée que c’est en entrainant la machine à apprendre qu’elle sera en mesure d’agir de manière intelligente.
 ]
 
 #pause
