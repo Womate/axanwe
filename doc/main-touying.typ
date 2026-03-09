@@ -199,6 +199,9 @@ Repose sur du *Don't know* non-determinism
 
 == Exemple Prolog
 
+#stickybox(
+  tape: false,
+)[
 ```prolog
 femme(anne).
 parent(anne, paul).
@@ -206,6 +209,35 @@ parent(anne, magali).
 
 mere(X,Y) :- femme(X), parent(X,Y).
 ```
+]
+
+#pause
+
+$forall$ `X`, $forall$ `Y`,  `mere(X,Y)` est vrai si `femme(X)` et `parent(X,Y)` sont vrais.
+
+#pause
+
+#stickybox(
+  tape: false,
+)[
+```Prolog
+?- mere(anne,paul).
+``` 
+]
+   
+`mere(anne,paul)` est-il vrai ? Question fermée !
+
+#pause
+
+#stickybox(
+  tape: false,
+)[
+```Prolog
+?- mere(anne,P).
+``` 
+]
+   
+$exists$ `P` tel-que `mere(anne,P)` soit vrai ? Question ouverte !
 
 = Prolog en action !
 
@@ -219,30 +251,42 @@ mere(X,Y) :- femme(X), parent(X,Y).
   stroke: none,
     $ ((X : T) in Γ) / (Γ ⊢ X : T) #pause $,
     [
-        ```prolog
-        system(Γ ⊢ X : T) :-
-            atom(X),
-            in_gamma(X:T, Γ).
-        ```
+       #stickybox(
+         tape: false,
+       )[
+```prolog
+system(Γ ⊢ X : T) :-
+    atom(X),
+    in_gamma(X:T, Γ).        
+```
+        ]
         #pause    
     ],
     v(1em),v(1em),
     $ (Γ ⊢ X : T_1 → T_2 #h(1em) Γ ⊢ Y : T_1) / (Γ ⊢ X #h(5pt) Y : T_2) #pause $,
     [
-        ```prolog
-        system(Γ ⊢ (X @ Y) : T2) :-
-            system(Γ ⊢ X : (T1 → T2)),
-            system(Γ ⊢ Y : T1).
-        ```
+       #stickybox(
+         tape: false,
+       )[
+```prolog
+system(Γ ⊢ (X @ Y) : T2) :-
+    system(Γ ⊢ X : (T1 → T2)),
+    system(Γ ⊢ Y : T1).       
+```
+       ]
         #pause
     ],
     v(1em),v(1em),
     $ (Γ,X:T_1 ⊢ Y : T_2) / (Γ ⊢ X ⇒ Y : T_1 → T_2) #pause $,   
     [
-        ```prolog
-        system(Γ ⊢ (X ⇒ Y) : (T1 → T2)) :-
-            system((Γ,X:T1) ⊢ Y : T2).
-        ```
+#stickybox(
+ tape: false,
+)[
+```prolog
+system(Γ ⊢ (X ⇒ Y) : (T1 → T2)) :-
+    system((Γ,X:T1) ⊢ Y : T2).
+```
+]
     ],
 )
 
@@ -250,33 +294,45 @@ mere(X,Y) :- femme(X), parent(X,Y).
     
 *Typage de la fonction identité*
     
+#stickybox(
+         tape: false,
+)[    
 ```prolog
 ?- system([] ⊢ (x ⇒ x) : T).
 ```
+]
 #pause
 ```prolog
 T = (_A→_A)
 ```
 
-#pause #v(1em)
+#pause
 
 *Application de fonction sans connaitre les hypothèses*
 
+#stickybox(
+         tape: false,
+)[    
 ```prolog
 ?- system(Γ ⊢ (x @ y) : T,L).
 ```
+]
 #pause
 ```prolog
 Γ = ((_, y:_A), x:(_A→T))
 ```
 
-#pause #v(1em)
+#pause
 
 *Fonction d'application* (réification)
 
+#stickybox(
+         tape: false,
+)[    
 ```prolog
 ?- system([] ⊢ (x ⇒ y ⇒ (x @ y)) : (T1 → T2)).
 ```
+]
 #pause
 ```prolog
 T1 = T2, T2 = (_A→_B)
@@ -284,7 +340,9 @@ T1 = T2, T2 = (_A→_B)
 
 == Description de la règle d'emprunt capée à 35%
 
-#align[
+#stickybox(
+         tape: false,
+)[
 ```prolog
 maxDebt(35).
 
@@ -299,33 +357,45 @@ debt(family(NetSalary),monthly(Instalment),debtPercent(Percent)) :-
 
 *Vérification l'endettement*
 
+#stickybox(
+         tape: false,
+)[    
 ```prolog
 ?- debt(family(4_000),monthly(1_000),debtPercent(25)).
 ```
+]
 #pause
 ```prolog
 true
 ```
 
-#pause #v(1em)
+#pause
 
 *Simple calcul de l'endettement*
 
+#stickybox(
+         tape: false,
+)[    
 ```prolog
 ?- debt(family(4_000),monthly(M),debtPercent(25)).
 ```
+]
 #pause
 ```prolog
 M = 1_000.0
 ```
 
-#pause #v(1em)
+#pause
 
 *Proposition de mensualité à partir d'un internal de pourcentages*
 
+#stickybox(
+         tape: false,
+)[    
 ```prolog
 ?- debt(family(4_000),monthly(M),debtPercent(P)), {20 < P, P =< 25}.
 ```
+]
 #pause
 ```prolog
 {P=0.025*M, M>800.0, M=<1000.0}.
