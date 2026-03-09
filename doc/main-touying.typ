@@ -246,7 +246,7 @@ mere(X,Y) :- femme(X), parent(X,Y).
     ],
 )
 
-== Système de type pour un $lambda$-calcul simple
+== Système de type pour un $lambda$-calcul simple \~ Exemples
     
 *Typage de la fonction identité*
     
@@ -260,14 +260,14 @@ T = (_A→_A)
 
 #pause #v(1em)
 
-*Application à la fonction identité sans connaitre les hypothèses*
+*Application de fonction sans connaitre les hypothèses*
 
 ```prolog
-?- system(Γ ⊢ ((x ⇒ x) @ y) : T).
+?- system(Γ ⊢ (x @ y) : T,L).
 ```
 #pause
 ```prolog
-Γ = (_, y:T)
+Γ = ((_, y:_A), x:(_A→T))
 ```
 
 #pause #v(1em)
@@ -284,7 +284,7 @@ T1 = T2, T2 = (_A→_B)
 
 == Description de la règle d'emprunt capée à 35%
 
-#align(center)[
+#align[
 ```prolog
 maxDebt(35).
 
@@ -295,27 +295,38 @@ debt(family(NetSalary),monthly(Instalment),debtPercent(Percent)) :-
 ```
 ]    
 
-== Description de la règle d'emprunt capée à 35%
+== Description de la règle d'emprunt capée à 35% \~ Exemples
 
-
-*Simple calcul de l'endettement*
+*Vérification l'endettement*
 
 ```prolog
-?- debt(family(4_500),monthly(1_500),debtPercent(P)).
+?- debt(family(4_000),monthly(1_000),debtPercent(25)).
 ```
 #pause
 ```prolog
-P = 33.333333333333336.
+true
 ```
 
 #pause #v(1em)
 
-*Proposition de mensualité à partir d'une base*
+*Simple calcul de l'endettement*
 
 ```prolog
-?- debt(family(4_500),monthly(X),debtPercent(35)).
+?- debt(family(4_000),monthly(M),debtPercent(25)).
 ```
 #pause
 ```prolog
-X = 1575.0.
+M = 1_000.0
+```
+
+#pause #v(1em)
+
+*Proposition de mensualité à partir d'un internal de pourcentages*
+
+```prolog
+?- debt(family(4_000),monthly(M),debtPercent(P)), {20 < P, P =< 25}.
+```
+#pause
+```prolog
+{P=0.025*M, M>800.0, M=<1000.0}.
 ```

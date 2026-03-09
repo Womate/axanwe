@@ -44,6 +44,7 @@ system(Γ ⊢ X : T, proof(gamma(X,T))) :-
  *  Γ ⊢ X Y : T2
  */
 system(Γ ⊢ (X @ Y) : T2, proof(abs,LOG1,LOG2)) :-
+    ground(X @ Y),
     system(Γ ⊢ X : (T1 → T2), LOG1),
     system(Γ ⊢ Y : T1, LOG2),
     acyclic_term(T1 → T2),
@@ -55,6 +56,7 @@ system(Γ ⊢ (X @ Y) : T2, proof(abs,LOG1,LOG2)) :-
  *  Γ ⊢ X ⇒ Y : T1 → T2
  */
 system(Γ ⊢ (X ⇒ Y) : (T1 → T2), proof(abs, LOG)) :-
+    ground(X ⇒ Y),
     system((Γ,X:T1) ⊢ Y : T2, LOG),
     acyclic_term(T1 → T2),
     !.
