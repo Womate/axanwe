@@ -145,6 +145,15 @@ TODO
 
 = Programmation Logique
 
+== Définition générale
+
+La programmation logique est une approche déclarative des applications reposant sur : #pause
+- une base de *faits* élémentaires, #pause
+- une base de *règles* associant des conséquences à des faits et #pause
+- un moteur de *démonstration* dit d'inférence #pause
+
+*Approche reposant sur la description des propriétés du résultat et un démonstrateur*
+ 
 == Prolog
 #set page(background: image("assets/extrait-article.png", width: 130%, height: 130%))
 
@@ -237,10 +246,9 @@ $forall$ `X`, $forall$ `Y`,  `mere(X,Y)` est vrai si `femme(X)` et `parent(X,Y)`
 ``` 
 ]
    
-$exists$ `P` tel-que `mere(anne,P)` soit vrai ? Question ouverte !
+$exists$ `P` tel-que `mere(anne,P)` soit vrai ? Question ouverte 
 
 = Prolog en action !
-
 
 == Système de type pour un $lambda$-calcul simple
   
@@ -340,16 +348,25 @@ T1 = T2, T2 = (_A→_B)
 
 == Description de la règle d'emprunt capée à 35%
 
+#colorbox(
+    title:"Comment déterminer votre capacité d’emprunt ?",
+    color:"blue",
+)[
+L’établissement bancaire détermine votre capacité d'endettement en appliquant à vos ressources un taux d'effort qui ne doit, en principe, pas dépasser 35 %.
+]
+
+#pause
+
 #stickybox(
          tape: false,
 )[
 ```prolog
 maxDebt(35).
 
-debt(family(NetSalary),monthly(Instalment),debtPercent(Percent)) :-
+debt(family(Resources),monthly(Instalment),debtPercent(Effort)) :-
     maxDebt(MaxDebt),
-    {Instalment =< MaxDebt / 100 * NetSalary},
-    {Percent = 100 * (Instalment / NetSalary)}.
+    {Instalment =< MaxDebt / 100 * Resources},
+    {Effort = 100 * (Instalment / Resources)}.
 ```
 ]    
 
