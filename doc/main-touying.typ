@@ -1,5 +1,6 @@
 #import "@preview/touying:0.6.2": *
 #import "@preview/colorful-boxes:1.4.3": *
+#import "@preview/tdtr:0.5.4": *
 
 #import themes.metropolis: *
 
@@ -74,7 +75,7 @@ sealed interface Maybe<A> {
     default <B> Maybe<B> map(Function<? super A, ? extends B> mapper) {
         return switch (this) {
             case Just<A>(var value) -> new Just<>(mapper.apply(value));
-            case Nothing<A>()  -> new Nothing<>();
+            case Nothing<A>() -> new Nothing<>();
         };
     }
 }    
@@ -183,15 +184,17 @@ La programmation logique est une approche déclarative des applications reposant
 - Forme restreinte du calcul des prédicats #pause
 - Principe d'unification de termes
 
-== Termes Prolog
+== Survol du Langage Prolog
 
+=== Termes
 - Variables: X
 - Entier: 1
 - Atome: chien
-- Foncteur: montant(1_000,euro)
+- Foncteur: `montant(1_000,euro)`, montant(X,euro) 
 
-== Prédicats Prolog
+#pause
 
+=== Prédicats
 - A: atome | foncteur
 - A. pour les faits ou assertions
 - A0 :- A1, ..., An. pour les règles
@@ -248,7 +251,35 @@ $forall$ `X`, $forall$ `Y`,  `mere(X,Y)` est vrai si `femme(X)` et `parent(X,Y)`
 ``` 
 ]
    
-$exists$ `P` tel-que `mere(anne,P)` soit vrai ? Question ouverte 
+$exists$ `P`, `mere(anne,P)` soit vrai ? Question ouverte 
+
+== Exemple Prolog: `?- mere(anne,P).`
+
+#align(center)[
+    #tidy-tree-graph(
+        draw-node: (stroke: none),
+        text-size:20pt,
+        spacing: (150pt, 40pt)
+    )[
+      - `?- mere(anne,P)`
+        - *$and$* 
+            - `femme(anne)`
+              - *$square$*
+            - `parent(anne,P)`
+                - *$or$*
+                    + P $arrow$ paul
+                    - *$square$*
+                    + P $arrow$ magali
+                    - *$square$*
+    ]
+
+    #pause
+
+    #v(2em)
+
+    * Two solutions i.e. `{P` $arrow$ `paul}` and `{P` $arrow$ `magali}`*
+
+]
 
 = Prolog en action !
 
@@ -374,7 +405,7 @@ system(Γ ⊢ (X ⇒ Y) : (T1 → T2)) :-
 
 == Système de type pour un $lambda$-calcul simple \~ Exemples
     
-*Typage de la fonction identité*
+*Fonction identité*
     
 #stickybox(
          tape: false,
