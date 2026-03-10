@@ -209,7 +209,7 @@ Repose sur du *Don't know* non-determinism
 - Sélectionne une tête de prédicat par unification
 - Prouve le corps de la règle avec la substitution
 
-À chaque selection il y a un point rebroussement
+À chaque selection il y a un *point rebroussement*
 
 == Exemple Prolog
 
@@ -277,7 +277,7 @@ $exists$ `P`, `mere(anne,P)` soit vrai ? Question ouverte
 
     #v(2em)
 
-    * Two solutions i.e. `{P` $arrow$ `paul}` and `{P` $arrow$ `magali}`*
+    * Deux solutions i.e. `{P` $arrow$ `paul}` and `{P` $arrow$ `magali}`*
 
 ]
 
@@ -298,12 +298,12 @@ L’établissement bancaire détermine votre capacité d'endettement en appliqua
          tape: false,
 )[
 ```prolog
-maxDebt(35).
+detteMaxPourcentage(35).
 
-debt(family(Resources),monthly(Instalment),debtPercent(Effort)) :-
-    maxDebt(MaxDebt),
-    {Instalment =< MaxDebt / 100 * Resources},
-    {Effort = 100 * (Instalment / Resources)}.
+dette(famille(Ressources),mensualite(Versement),dettePourcent(Effort)) :-
+    detteMaxPourcentage(DetteMaxPourcentage),
+    {Versement =< DetteMaxPourcentage / 100 * Ressources},
+    {Effort = 100 * Versement / Ressources}.
 ```
 ]    
 
@@ -315,7 +315,7 @@ debt(family(Resources),monthly(Instalment),debtPercent(Effort)) :-
          tape: false,
 )[    
 ```prolog
-?- debt(family(4_000),monthly(1_000),debtPercent(25)).
+?- dette(famille(4_000),mensualite(1_000),dettePercentage(25)).
 ```
 ]
 #pause
@@ -331,7 +331,7 @@ true
          tape: false,
 )[    
 ```prolog
-?- debt(family(4_000),monthly(M),debtPercent(25)).
+?- dette(famille(4_000),mensualite(M),dettePercentage(25)).
 ```
 ]
 #pause
@@ -347,7 +347,7 @@ M = 1_000.0
          tape: false,
 )[    
 ```prolog
-?- debt(family(4_000),monthly(M),debtPercent(P)), {20 < P, P =< 25}.
+?- dette(famille(4_000),mensualite(M),dettePercentage(P)), {20 < P, P =< 25}.
 ```
 ]
 #pause
@@ -369,7 +369,6 @@ M = 1_000.0
        )[
 ```prolog
 system(Γ ⊢ X : T) :-
-    atom(X),
     in_gamma(X:T, Γ).        
 ```
         ]
@@ -427,7 +426,7 @@ T = (_A→_A)
          tape: false,
 )[    
 ```prolog
-?- system(Γ ⊢ (x @ y) : T,L).
+?- system(Γ ⊢ (x @ y) : T).
 ```
 ]
 #pause
