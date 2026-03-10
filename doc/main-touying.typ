@@ -25,7 +25,7 @@ TODO
 
 TODO
 
-== IA Connexioniste vs. IA Symbolique
+== IA Connexionniste vs. IA Symbolique
 
 #pause
 
@@ -35,7 +35,8 @@ TODO
     radius: 2pt,
     width: auto,
 )[
-Le connexionnisme met en avant l’idée que c’est en entrainant la machine à apprendre qu’elle sera en mesure d’agir de manière intelligente.
+    Le connexionnisme met en avant l’idée que c’est en entrainant la machine à apprendre qu’elle sera en mesure d’agir 
+    de manière intelligente.
 ]
 
 #pause
@@ -50,7 +51,8 @@ Le connexionnisme met en avant l’idée que c’est en entrainant la machine à
     radius: 2pt,
     width: auto,
 )[
-Technique qui s’appuie sur la logique et la manipulation de symboles. Son application la plus connue est la conception des systèmes experts
+    Technique qui s’appuie sur la logique et la manipulation de symboles. Son application la plus connue est la 
+    conception des systèmes experts
 ]
 
 #pause
@@ -61,13 +63,13 @@ Technique qui s’appuie sur la logique et la manipulation de symboles. Son appl
 
 == Le filtrage par motif
 
+#stickybox(
+         tape: false,
+)[    
 ```Java
 sealed interface Maybe<A> {
     record Just<A>(A value) implements Maybe<A> {}
     record Nothing<A>() implements Maybe<A> {}
-```
-#pause
-```Java
 
     default <B> Maybe<B> map(Function<? super A, ? extends B> mapper) {
         return switch (this) {
@@ -75,11 +77,11 @@ sealed interface Maybe<A> {
             case Nothing<A>()  -> new Nothing<>();
         };
     }
+}    
 ```
-#meanwhile
-```Java
-}
-```
+]
+
+
 #pause
 *Le filtrage de* `Just<A>(var value)` *permet de capturer un fragment lié à* `value`
 
@@ -250,12 +252,84 @@ $exists$ `P` tel-que `mere(anne,P)` soit vrai ? Question ouverte
 
 = Prolog en action !
 
+== Description de la règle d'emprunt capée à 35%
+
+#colorbox(
+    title:"Comment déterminer votre capacité d’emprunt ?",
+    color:"blue",
+)[
+L’établissement bancaire détermine votre capacité d'endettement en appliquant à vos ressources un taux d'effort qui ne doit, en principe, pas dépasser 35 %.
+]
+
+#pause
+
+#stickybox(
+         tape: false,
+)[
+```prolog
+maxDebt(35).
+
+debt(family(Resources),monthly(Instalment),debtPercent(Effort)) :-
+    maxDebt(MaxDebt),
+    {Instalment =< MaxDebt / 100 * Resources},
+    {Effort = 100 * (Instalment / Resources)}.
+```
+]    
+
+== Description de la règle d'emprunt capée à 35% \~ Exemples
+
+*Vérification l'endettement*
+
+#stickybox(
+         tape: false,
+)[    
+```prolog
+?- debt(family(4_000),monthly(1_000),debtPercent(25)).
+```
+]
+#pause
+```prolog
+true
+```
+
+#pause
+
+*Simple calcul de l'endettement*
+
+#stickybox(
+         tape: false,
+)[    
+```prolog
+?- debt(family(4_000),monthly(M),debtPercent(25)).
+```
+]
+#pause
+```prolog
+M = 1_000.0
+```
+
+#pause
+
+*Proposition de mensualité à partir d'un internal de pourcentages*
+
+#stickybox(
+         tape: false,
+)[    
+```prolog
+?- debt(family(4_000),monthly(M),debtPercent(P)), {20 < P, P =< 25}.
+```
+]
+#pause
+```prolog
+{P=0.025*M, M>800.0, M=<1000.0}
+```
+
 == Système de type pour un $lambda$-calcul simple
   
 #pause    
     
 #table(
-  columns: (20em,20em),
+  columns: (50%,50%),
   stroke: none,
     $ ((X : T) in Γ) / (Γ ⊢ X : T) #pause $,
     [
@@ -271,7 +345,7 @@ system(Γ ⊢ X : T) :-
         #pause    
     ],
     v(1em),v(1em),
-    $ (Γ ⊢ X : T_1 → T_2 #h(1em) Γ ⊢ Y : T_1) / (Γ ⊢ X #h(5pt) Y : T_2) #pause $,
+    $ (Gamma ⊢ X : T_1 → T_2 #h(1em) Γ ⊢ Y : T_1) / (Γ ⊢ X #h(5pt) Y : T_2) #pause $,
     [
        #stickybox(
          tape: false,
@@ -346,74 +420,3 @@ T = (_A→_A)
 T1 = T2, T2 = (_A→_B)
 ```
 
-== Description de la règle d'emprunt capée à 35%
-
-#colorbox(
-    title:"Comment déterminer votre capacité d’emprunt ?",
-    color:"blue",
-)[
-L’établissement bancaire détermine votre capacité d'endettement en appliquant à vos ressources un taux d'effort qui ne doit, en principe, pas dépasser 35 %.
-]
-
-#pause
-
-#stickybox(
-         tape: false,
-)[
-```prolog
-maxDebt(35).
-
-debt(family(Resources),monthly(Instalment),debtPercent(Effort)) :-
-    maxDebt(MaxDebt),
-    {Instalment =< MaxDebt / 100 * Resources},
-    {Effort = 100 * (Instalment / Resources)}.
-```
-]    
-
-== Description de la règle d'emprunt capée à 35% \~ Exemples
-
-*Vérification l'endettement*
-
-#stickybox(
-         tape: false,
-)[    
-```prolog
-?- debt(family(4_000),monthly(1_000),debtPercent(25)).
-```
-]
-#pause
-```prolog
-true
-```
-
-#pause
-
-*Simple calcul de l'endettement*
-
-#stickybox(
-         tape: false,
-)[    
-```prolog
-?- debt(family(4_000),monthly(M),debtPercent(25)).
-```
-]
-#pause
-```prolog
-M = 1_000.0
-```
-
-#pause
-
-*Proposition de mensualité à partir d'un internal de pourcentages*
-
-#stickybox(
-         tape: false,
-)[    
-```prolog
-?- debt(family(4_000),monthly(M),debtPercent(P)), {20 < P, P =< 25}.
-```
-]
-#pause
-```prolog
-{P=0.025*M, M>800.0, M=<1000.0}.
-```
