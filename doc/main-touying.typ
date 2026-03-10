@@ -256,21 +256,21 @@ $exists$ `P`, `mere(anne,P)` soit vrai ? Question ouverte
 == Exemple Prolog: `?- mere(anne,P).`
 
 #align(center)[
-    #tidy-tree-graph(
+    #h(13%) #tidy-tree-graph( // Humm 
         draw-node: (stroke: none),
-        text-size:20pt,
+        text-size:20pt,       
         spacing: (150pt, 40pt)
     )[
-      - `?- mere(anne,P)`
-        - *$and$* 
-            - `femme(anne)`
-              - *$square$*
-            - `parent(anne,P)`
-                - *$or$*
-                    + P $arrow$ paul
-                    - *$square$*
-                    + P $arrow$ magali
-                    - *$square$*
+        - `?- mere(anne,P)`
+            - *$and$* 
+                - `femme(anne)`
+                  - *$square$*
+                - `parent(anne,P)`
+                    - *$or$*
+                        + {P $arrow$ paul}
+                        - *$square$*
+                        + {P $arrow$ magali}
+                        - *$square$*
     ]
 
     #pause
