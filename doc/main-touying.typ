@@ -14,6 +14,7 @@
     ),
 )
 
+#set text(font:"iosevka")
 #set heading(numbering: none)
 
 #title-slide()
@@ -300,7 +301,7 @@ L’établissement bancaire détermine votre capacité d'endettement en appliqua
 ```prolog
 detteMaxPourcentage(35).
 
-dette(famille(Ressources),mensualite(Versement),dettePourcent(Effort)) :-
+dette(famille(Ressources),mensualite(Versement),dettePourcentage(Effort)) :-
     detteMaxPourcentage(DetteMaxPourcentage),
     {Versement =< DetteMaxPourcentage / 100 * Ressources},
     {Effort = 100 * Versement / Ressources}.
