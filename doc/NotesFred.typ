@@ -87,6 +87,14 @@ Sans rentrer dans plus de détails, l'unification est un processus gourmand, qui
 recherche d'optimisation. En particulier par #link("https://fr.wikipedia.org/wiki/John_Alan_Robinson")[Alan Robinson]
 philosophe, mathématicien et informaticien anglais qui l'a redécouvert en 1965.
 
+L'une des subtilités coûteuses de l'unification est le *test d'occurrence* communément appelé *occur check* : on doit
+s'assurer quand on associe une variable à un terme que celle-ci n'apparaît pas libre dans le terme, sous peine de créer
+des termes infinis. Selon les versions de *Prolog* il est possible de désactiver l'*occur check* pour des raisons de
+performance ou au contraire d'embrasser la notion de terme rationnels qui sont des termes récursifs et donc infinis.
+
+L'unification, avec la possibilité de répéter des variables, implique le test d'égalité : $f(X,X)$ n'est pas unifiable
+avec $f(a,b)$ car $a != b$, mais l'est avec $f(g(a,b), g(a,b))$ par exemple.
+
 Au dela de *Prolog*, l'unification est un processus qui rentre dans de nombreuses branches de la logique pour résoudre
 des équations entre termes. Mais de façon très pragmatique elle est aussi au cœur d'algorithmes de typage, quand il
 s'agit d' « inférer » des types, comme peuvent le faire des langages comme O'Caml, mais aussi Rust.
