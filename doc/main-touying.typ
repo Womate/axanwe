@@ -14,8 +14,11 @@
     ),
 )
 
-#set text(font:"iosevka")
+// #set text(font:"iosevka")
+// #show math.equation: set text(font: "iosevka")
+
 #set heading(numbering: none)
+#show math.frac: it => $display(it)$
 
 #title-slide()
 
@@ -279,7 +282,6 @@ $exists$ `P`, `mere(anne,P)` soit vrai ? Question ouverte
     #v(2em)
 
     * Deux solutions i.e. `{P` $arrow$ `paul}` and `{P` $arrow$ `magali}`*
-
 ]
 
 = Prolog en action !
@@ -290,7 +292,7 @@ $exists$ `P`, `mere(anne,P)` soit vrai ? Question ouverte
     title:"Comment déterminer votre capacité d’emprunt ?",
     color:"blue",
 )[
-L’établissement bancaire détermine votre capacité d'endettement en appliquant à vos ressources un taux d'effort qui ne doit, en principe, pas dépasser 35 %.
+L’établissement bancaire détermine votre *capacité* d'endettement en appliquant à vos *ressources* un taux d'*effort* qui ne doit, en principe, *pas dépasser 35 %*.
 ]
 
 #pause
@@ -299,18 +301,18 @@ L’établissement bancaire détermine votre capacité d'endettement en appliqua
          tape: false,
 )[
 ```prolog
-detteMaxPourcentage(35).
+detteMaxPourcent(35).
 
-dette(famille(Ressources),mensualite(Versement),dettePourcentage(Effort)) :-
-    detteMaxPourcentage(DetteMaxPourcentage),
-    {Versement =< DetteMaxPourcentage / 100 * Ressources},
-    {Effort = 100 * Versement / Ressources}.
+dette(famille(Ressources),mensualite(Capacite),dettePourcent(Effort)) :-
+    detteMaxPourcent(DetteMaxPourcent),
+    {Capacite =< DetteMaxPourcent / 100 * Ressources},
+    {Effort = 100 * Capacite / Ressources}.
 ```
 ]    
 
 == Description de la règle d'emprunt capée à 35% \~ Exemples
 
-*Vérification l'endettement*
+*Vérification d'endettement*
 
 #stickybox(
          tape: false,
@@ -326,7 +328,7 @@ true
 
 #pause
 
-*Simple calcul de l'endettement*
+*Calcul de mensualité*
 
 #stickybox(
          tape: false,
@@ -342,20 +344,46 @@ M = 1_000.0
 
 #pause
 
-*Proposition de mensualité à partir d'un internal de pourcentages*
+*Proposition de mensualités à partir d'une dette $in$ \]20-25\] *
 
 #stickybox(
          tape: false,
 )[    
 ```prolog
-?- dette(famille(4_000),mensualite(M),dettePercentage(P)), {20 < P, P =< 25}.
+?- dette(famille(4_000),mensualite(M),dettePercentage(D)), {20 < D, D =< 25}.
 ```
 ]
 #pause
 ```prolog
-{P=0.025*M, M>800.0, M=<1000.0}
+{D=0.025*M, M>800.0, M=<1000.0}
 ```
 
+== Système de type pour un $lambda$-calcul simple
+
+#colorbox(
+    title:"Représentation d'une règles de typage",
+    color:"blue",
+)[
+On introduit la notation *$Γ ⊢ M : T$*, où $Γ$ est une liste de paires de la forme 
+$ x: B$ où $x$ est une variable et $B$ un type, $M$  est un terme et $T$ un type. 
+Elle se lit « dans le contexte $Γ$, le terme $M$ a pour type $T$.
+
+Une règle de la forme *$(Γ_1 ⊢ M_1 : T_1 ... Γ_n ⊢ M_n : T_n) / (Γ ⊢ M : T)$* doit se 
+comprendre comme "si $Γ_1 ⊢ M_1 : T_1 ... Γ_n ⊢ M_n : T_n$ alors $Γ ⊢ M : T$".
+]
+
+#pause
+
+#colorbox(
+    title:"Règle pour le λ-calcul simple",
+    color:"green",
+)[
+$
+((x : T) in Γ) / (Γ ⊢ x : T) #h(2em)
+(Gamma ⊢ X : T_1 → T_2 #h(1em) Γ ⊢ Y : T_1) / (Γ ⊢ X #h(5pt) Y : T_2) #h(2em)
+(Γ,x:T_1 ⊢ Y : T_2) / (Γ ⊢ lambda x.Y : T_1 → T_2) 
+$
+]
 == Système de type pour un $lambda$-calcul simple
   
 #pause    
@@ -363,13 +391,14 @@ M = 1_000.0
 #table(
   columns: (50%,50%),
   stroke: none,
-    $ ((X : T) in Γ) / (Γ ⊢ X : T) #pause $,
+    $ ((x : T) in Γ) / (Γ ⊢ x : T) #pause $,
     [
        #stickybox(
          tape: false,
        )[
 ```prolog
 system(Γ ⊢ X : T) :-
+    atom(X),!,
     in_gamma(X:T, Γ).        
 ```
         ]
@@ -390,13 +419,14 @@ system(Γ ⊢ (X @ Y) : T2) :-
         #pause
     ],
     v(1em),v(1em),
-    $ (Γ,X:T_1 ⊢ Y : T_2) / (Γ ⊢ X ⇒ Y : T_1 → T_2) #pause $,   
+    $ (Γ,x:T_1 ⊢ Y : T_2) / (Γ ⊢ lambda x.Y : T_1 → T_2) #pause $,   
     [
 #stickybox(
  tape: false,
 )[
 ```prolog
 system(Γ ⊢ (X ⇒ Y) : (T1 → T2)) :-
+    atom(X),
     system((Γ,X:T1) ⊢ Y : T2).
 ```
 ]
@@ -450,4 +480,3 @@ T = (_A→_A)
 ```prolog
 T1 = T2, T2 = (_A→_B)
 ```
-

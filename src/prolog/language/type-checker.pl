@@ -1,25 +1,3 @@
-/*
- * Cf. https://ncatlab.org/nlab/show/bidirectional+typechecking
- */
-
-/*
-
-   ident    ::= [a-z][A-Z0_1]*
-
-    term    ::= ident               -- variable
-              | ident ⇒ term        -- abstraction
-              | term @ term         -- application
-
-    type    ::= ident               -- native type
-              | ident → term        -- function
-
-    gamma   ::= []                  -- no hypothesis
-              | gamma, ident:type   -- at least one hypothesis
-
-    premise ::= gamma ⊢ term : type
-
-*/
-
 :- op(800, xfy, user:(⊢)).
 :- op(800, yfx, user:(→)).
 :- op(900, xfy, user:(⇒)).
@@ -56,7 +34,7 @@ system(Γ ⊢ (X @ Y) : T2, proof(abs,LOG1,LOG2)) :-
  *  Γ ⊢ X ⇒ Y : T1 → T2
  */
 system(Γ ⊢ (X ⇒ Y) : (T1 → T2), proof(abs, LOG)) :-
-    ground(X ⇒ Y),
+    atom(X),
     system((Γ,X:T1) ⊢ Y : T2, LOG),
     acyclic_term(T1 → T2),
     !.
