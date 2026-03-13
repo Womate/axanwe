@@ -360,6 +360,8 @@ M = 1_000.0
 
 == Système de type pour un $lambda$-calcul simple
 
+#pause
+
 #colorbox(
     title:"Représentation d'une règles de typage",
     color:"blue",
@@ -368,8 +370,8 @@ On introduit la notation *$Γ ⊢ M : T$*, où $Γ$ est une liste de paires de l
 $ x: B$ où $x$ est une variable et $B$ un type, $M$  est un terme et $T$ un type. 
 Elle se lit « dans le contexte $Γ$, le terme $M$ a pour type $T$.
 
-Une règle de la forme *$(Γ_1 ⊢ M_1 : T_1 ... Γ_n ⊢ M_n : T_n) / (Γ ⊢ M : T)$* doit se 
-comprendre comme "si $Γ_1 ⊢ M_1 : T_1 ... Γ_n ⊢ M_n : T_n$ alors $Γ ⊢ M : T$".
+Une règle de la forme *$(Γ_1 ⊢ M_1 : T_1 #h(5pt) dots #h(5pt) Γ_n ⊢ M_n : T_n) / (Γ ⊢ M : T)$* doit se 
+comprendre comme "si $Γ_1 ⊢ M_1 : T_1 #h(5pt) dots #h(5pt) Γ_n ⊢ M_n : T_n$ alors $Γ ⊢ M : T$".
 ]
 
 #pause
