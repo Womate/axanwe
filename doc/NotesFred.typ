@@ -99,6 +99,121 @@ Au dela de *Prolog*, l'unification est un processus qui rentre dans de nombreuse
 des équations entre termes. Mais de façon très pragmatique elle est aussi au cœur d'algorithmes de typage, quand il
 s'agit d' « inférer » des types, comme peuvent le faire des langages comme O'Caml, mais aussi Rust.
 
+== Clauses de Horn
+
+Ensuite le principe opérationnel de *Prolog* c'est la logique du premier ordre mais avec quelques restrictions pour des
+raisons pratiques.
+
+=== Logique du premier ordre
+
+#image("assets/prédicats/Frege.jpg")
+
+La logique du premier ordre à été proposée par #link("https://fr.wikipedia.org/wiki/Gottlob_Frege")[Gottlob Frege],
+un logicien de la fin du XIX#super[e] siècle. C'est un système formel, c'est à dire un langage dont la syntaxe et la
+sémantique sont définis rigoureusement. Son objectif est de décrire des énoncé de mathématique (mais aussi de
+philosophie, de linguistique) et de pouvoir raisonner dessus.
+
+Ce langage introduit toute une famille de symboles:
+- des connecteurs logiques ($not$, $and$, $or$, $=>$, ...)
+- des quantificateurs ($forall$, $exists$)
+- des variables, prenant leurs valeur sur un domaine d'interprétation, qui sont quantifiables ($X$, $Y$, ...).
+- des prédicats, qui décrivent des relations de vérité entre éléments du domaine, qui ne sont pas quantifiables
+  ($"pere"$, $"plusGrand"$, ...). C'est parce qu'on ne peut pas quantifier sur les prédicats qu'on qualifie cette
+  logique de « premier ordre ». Il existe des logiques d'ordre supérieur bien sur, mais ce n'est pas notre sujet ici.
+
+On suivra ici la convention de notation de *Prolog* : les variables commencent par une majuscule et les prédicats par
+des minuscules.
+
+Ce qui permet d'écrire des expressions de la forme :
+
+$ forall X (exists Y "mere"(Y , X) and exists Z "pere"(Z, X)) $
+
+exprimant le fait que toute personne à une mère et un père biologique.
+
+=== Clauses de Horn
+
+Sauf que si ce genre de système formel est une avancée pour la manipulation d'assertions logiques, ça n'est pas
+encore très pratique à mécaniser. Or c'est tout de même un de nos objectifs à nous informaticiens.
+
+Sans renter dans des détails qui dépassent le cadre de cette présentation, il existe des transformations et autres
+restrictions qui rendent la chose plus simple. Tout d'abord il y a deux transformations qui permettent de se débarrasser
+des quantificateurs la mise en « #link("https://fr.wikipedia.org/wiki/Forme_pr%C3%A9nexe")[forme prénexe] » pour les
+$forall$ et la « #link("https://fr.wikipedia.org/wiki/Skol%C3%A9misation")[skolémisation] » pour les $exists$.
+
+Et puis on se limite à type de formules appelées « clauses de Horn ». Il s'agit de formules disjonctives (constituées
+uniquement de « ou » ($or$) et de négations ($not$) ayant au plus un litéral positif.
+
+#set text(blue)
+Peut-être faudrait-il parler de d'algèbre de Boole et du fait qu'on peut se ramener à du NAND ?
+#set text(black)
+
+Elles ont la forme :
+$ not a_1 or not a_2 or ... or not a_n or b $
+Ce qui ce transforme en :
+$ not (a_1 and a_2 and ... and a_n) or b $
+Et donc :
+$ a_1 and a_2 and ... and a_n => b $
+
+== Prolog
+
+Le langage *Prolog* à été imaginé en 1972 à l'université de Luminy de Marseille par deux informaticiens français:
+#link("https://fr.wikipedia.org/wiki/Alain_Colmerauer")[Alain Colmerauer]
+#image("assets/A-Colmerauer_web-800x423.jpg")
+et
+#link("https://fr.wikipedia.org/wiki/Philippe_Roussel")[Philippe Roussel]
+#image("assets/Philippe_Roussel_informaticien.jpg")
+
+Sa cible était l'intelligence artificielle (telle qu'on la concevait dans les années 70 et 80) et tout particulièrement
+au traitement du langage naturel.
+
+*Prolog* est la fusion de l'unification et de la logique du premier ordre réduite aux clauses de Horn. Et
+bien sûr on ne s'embête pas avec la skolémisation ou la forme prénexe, ou quoi que ce soit de ce niveau d'abstraction.
+Ce sont des notions qui ont pour but de prouver une bonne foi pour toute l'équivalence avec la logique du premier ordre
+et donc la puissance des expressions du langage *Prolog*.
+
+Dans la vraie vie, on exprime directement les problèmes à traiter sous forme de clauses de Horn
+
+=== Notations
+
+Les clauses de Horn en *Prolog* se notent comme suit. Pour l'expression:
+
+$ a_1 and a_2 and ... and a_n => b $
+
+On écrira :
+
+```prolog
+b :- a1, a2, ..., aN.
+```
+
+Ce qui se lit : « `b` est vrai si `a1` et vrai et `a2` et vrai jusqu'à `aN` ». En quelque sorte le $and$ devient une
+virgule et le $=>$ un deux-points-tiret. En fait la définition des clauses de Horn, on la vu précédemment, c'est « une
+formule disjonctive ayant au plus un litéral positif ». En gros ça implique quoi ? Trois cas de figure selon qu'on à des
+`aN` ou un `b` dans notre clause:
+
+```prolog
+b.
+```
+Est un prédicat affirmant une vérité, par sa seule existence. En quelque sorte c'est un axiome, on dira que `b` est
+vrai. Ici on n'a pas de `aN`.
+```prolog
+b :- a1, a2, ..., aN.
+```
+Est une règle. C'est le type de clause le plus général qui indique que « `b` est vrai si `a1` et vrai et `a2` et vrai
+jusqu'à `aN` ».
+```prolog
+?- a1, a2, ..., aN.
+```
+Est un but à vérifier qui sera vrai si les `aN` sont vrai. Ici on n'a pas de `b`. Et on notera une subtilité, pour le
+différentier d'un axiome, on ne note pas `:-` comme on aurait pu s'y attendre, mais `?-`. En fait c'est le prompt de la
+CLI de *Prolog* qui se présente ainsi, car c'est le seul endroit où on peut exprimer un but.
+
+Mais il nous manque un ingrédient : le moteur, ce qui donne des valeurs de vérité à nos expressions.
+
+=== Résolution
+
+=== Négation
+
+
 
 
 
