@@ -207,11 +207,27 @@ Est un but à vérifier qui sera vrai si les `aN` sont vrai. Ici on n'a pas de `
 différentier d'un axiome, on ne note pas `:-` comme on aurait pu s'y attendre, mais `?-`. En fait c'est le prompt de la
 CLI de *Prolog* qui se présente ainsi, car c'est le seul endroit où on peut exprimer un but.
 
+=== Primitives
+
+*Prolog* est un langage de programmation et en tant que tel on l'a équipé de primitives qui vont au delà des principes
+théoriques qui le fondent. Pour ce qui est des types de données de base, qui forment les termes unifiables on trouve en
+plus des atomes et des foncteurs :
+
+- Les paires `[a | b]` et un atome particulier `ǹil`.
+- Les listes `[a, b, c]` qui ne sont que des paires imbriquées `[a | [b | [c, nil]]]`. (On est sur le même principe
+  qu'en *Lisp*).
+- Les nombres sans distinction entre réels et entiers.
+- Les chaînes de caractère notées "abcd".
+- Des prédicats particuliers pour manipuler certains de ces types : opérateurs arithmétiques (`+`, `-`, ...),
+  entrée/sorties (`write`), ...
+
 Mais il nous manque un ingrédient : le moteur, ce qui donne des valeurs de vérité à nos expressions.
 
 === Résolution
 
 === Négation
+
+== Prolog en Action
 
 
 
