@@ -3,8 +3,15 @@
 
 == Prolog
 
-- Forme restreinte du calcul des prédicats #pause
-- Principe d'unification de termes
+Sa cible était l'intelligence artificielle (telle qu'on la concevait dans les années 70 et 80) et tout particulièrement
+au traitement du langage naturel.
+
+*Prolog* est la fusion de l'unification et de la logique du premier ordre réduite aux clauses de Horn. Et
+bien sûr on ne s'embête pas avec la skolémisation ou la forme prénexe, ou quoi que ce soit de ce niveau d'abstraction.
+Ce sont des notions qui ont pour but de prouver une bonne fois pour toute l'équivalence avec la logique du premier ordre
+et donc la puissance des expressions du langage *Prolog*.
+
+Dans la vraie vie, on exprime directement les problèmes à traiter sous forme de clauses de Horn
 
 == Survol du Langage Prolog
 
@@ -24,9 +31,9 @@
 
 Calcul des Prédicats restreint aux Clauses de Horn
 
-=== Notations
+== Notations
 
-Les clauses de Horn en *Prolog* se notent comme suit. Pour l'expression:
+Les clauses de Horn en *Prolog* se notent comme suit. Pour l'expression
 
 $ a_1 and a_2 and ... and a_n => b $
 
@@ -58,7 +65,7 @@ Est un but à vérifier qui sera vrai si les `aN` sont vrai. Ici on n'a pas de `
 différentier d'un axiome, on ne note pas `:-` comme on aurait pu s'y attendre, mais `?-`. En fait c'est le prompt de la
 CLI de *Prolog* qui se présente ainsi, car c'est le seul endroit où on peut exprimer un but.
 
-=== Primitives
+== Primitives
 
 *Prolog* est un langage de programmation et en tant que tel on l'a équipé de primitives qui vont au delà des principes
 théoriques qui le fondent. Pour ce qui est des types de données de base, qui forment les termes unifiables on trouve en

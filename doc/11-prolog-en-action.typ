@@ -94,7 +94,7 @@ comprendre comme "si $Γ_1 ⊢ M_1 : T_1 #h(5pt) dots #h(5pt) Γ_n ⊢ M_n : T_n
 #pause
 
 #colorbox(
-    title:"Règle pour le λ-calcul simple",
+    title:"Règles pour le λ-calcul simplement i.e. typé λ-→",
     color:"green",
 )[
 $
