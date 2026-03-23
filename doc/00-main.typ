@@ -14,7 +14,7 @@
     ),
 )
 
-#set text(font:"iosevka")
+// #set text(font:"iosevka")
 // #show math.equation: set text(font: "iosevka")
 
 #set heading(numbering: none)

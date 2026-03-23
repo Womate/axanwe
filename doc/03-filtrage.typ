@@ -29,7 +29,7 @@ Le filtrage impose quelque limitations (pour des raisons théoriques ? D'implém
 pas avoir de variables répétées. Autrement dit $f(X,X)$ est interdit. Le terme filtré pour sa part ne doit pas contenir
 de variables.
 
-=== Filtrage: Et en Java ?
+== Filtrage: Et en Java ?
 
 #stickybox(
          tape: false,

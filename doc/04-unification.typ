@@ -31,7 +31,7 @@ Un terme peut se voir comme un graphe orienté acyclique.
 #link("https://fr.wikipedia.org/wiki/Jacques_Herbrand")[Jacques Herbrand] (1908-1931), mathématicien et logicien
 français propose une méthode pour déterminer si on peut trouver une substitution $sigma$ telle qu'elle rende deux
 termes identiques (égaux ?). Ici, il n'y a plus d'asymétrie entre terme à filter et filtre. Les deux termes ont le même
-statut. Et plus plus de limitation sur les variables : on peut trés bien les répéter dans un terme.
+statut. Et plus de limitation sur les variables : on peut trés bien les répéter dans un terme.
 
 #image("assets/unification/6.svg")
 
