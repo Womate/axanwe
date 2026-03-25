@@ -7,9 +7,9 @@ in_gamma(X:T, (_,X:T)).
 in_gamma(B, (L,_)) :- in_gamma(B,L).
 
 /*
- *  (X : T) in Γ
- *  ------------
- *  Γ ⊢ X : T
+ *
+ *  --------------------
+ *  Γ_1;X:T;Γ_2 ⊢ X : T
  */
 system(Γ ⊢ X : T, proof(gamma(X,T))) :-
     atom(X),
