@@ -80,15 +80,21 @@ M = 1_000.0
 #pause
 
 #colorbox(
-    title:"Représentation d'une règles de typage",
     color:"blue",
 )[
 On introduit la notation *$Γ ⊢ M : T$*, où $Γ$ est une liste de paires de la forme 
 $ x: B$ où $x$ est une variable et $B$ un type, $M$  est un terme et $T$ un type. 
 Elle se lit « dans le contexte $Γ$, le terme $M$ a pour type $T$.
+]
 
-Une règle de la forme *$(Γ_1 ⊢ M_1 : T_1 #h(5pt) dots #h(5pt) Γ_n ⊢ M_n : T_n) / (Γ ⊢ M : T)$* doit se 
-comprendre comme "si $Γ_1 ⊢ M_1 : T_1 #h(5pt) dots #h(5pt) Γ_n ⊢ M_n : T_n$ alors $Γ ⊢ M : T$".
+#pause
+
+#colorbox(
+    title:"Représentation d'une règles de typage",
+    color:"blue",
+)[
+Une règle de typage est de la forme *$(Γ_1 ⊢ M_1 : T_1 #h(5pt) dots #h(5pt) Γ_n ⊢ M_n : T_n) / (Γ ⊢ M : T)$* et doit se 
+comprendre ainsi:  "si $Γ_1 ⊢ M_1 : T_1 #h(5pt) dots #h(5pt) Γ_n ⊢ M_n : T_n$ alors $Γ ⊢ M : T$".
 ]
 
 #pause
@@ -98,7 +104,7 @@ comprendre comme "si $Γ_1 ⊢ M_1 : T_1 #h(5pt) dots #h(5pt) Γ_n ⊢ M_n : T_n
     color:"green",
 )[
 $
-((x : T) in Γ) / (Γ ⊢ x : T) #h(2em)
+() / (Γ_1; x:T;Gamma_2 ⊢ x : T) #h(2em)
 (Gamma ⊢ X : T_1 → T_2 #h(1em) Γ ⊢ Y : T_1) / (Γ ⊢ X #h(5pt) Y : T_2) #h(2em)
 (Γ,x:T_1 ⊢ Y : T_2) / (Γ ⊢ lambda x.Y : T_1 → T_2) 
 $
@@ -110,7 +116,7 @@ $
 #table(
   columns: (50%,50%),
   stroke: none,
-    $ ((x : T) in Γ) / (Γ ⊢ x : T) #pause $,
+    $ () / (Γ_1; x:T;Gamma_2 ⊢ x : T) #pause $,
     [
        #stickybox(
          tape: false,

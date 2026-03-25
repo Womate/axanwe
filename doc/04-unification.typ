@@ -1,9 +1,7 @@
 #import "@preview/touying:0.6.2": *
 #import "@preview/colorful-boxes:1.4.3": *
 
-== Unification
-
-=== Données du langage
+== Unification: Données du langage
 
 Les données manipulées par *Prolog* sont nommés *termes du langage*. Ils ont le même rôle que les entiers, chaînes de
 caractère, listes et autres structures dans à peut près tous les langages que vous connaissez. La grammaire pour les
@@ -18,19 +16,19 @@ sous termes.
 Une particularité ici, qui pourrait sembler anodine mais qui ne le sera pas, les variables font partie des termes, ce
 ne sont pas des concepts de première classe, donc manipulables.
 
-=== Vue comme arbre / graphe 
+== Unification: Vue comme arbre / graphe 
 
 Un terme peut se voir comme un graphe orienté acyclique.
 
 #image("assets/unification/1.svg")
 
-=== Unification
+== Principe d'unification
 
 #image("assets/unification/Herbrand.jpg", height: 50%)
 
 #link("https://fr.wikipedia.org/wiki/Jacques_Herbrand")[Jacques Herbrand] (1908-1931), mathématicien et logicien
 français propose une méthode pour déterminer si on peut trouver une substitution $sigma$ telle qu'elle rende deux
-termes identiques (égaux ?). Ici, il n'y a plus d'asymétrie entre terme à filter et filtre. Les deux termes ont le même
+termes identiques. Ici, il n'y a plus d'asymétrie entre terme à filter et filtre. Les deux termes ont le même
 statut. Et plus de limitation sur les variables : on peut trés bien les répéter dans un terme.
 
 #image("assets/unification/6.svg")

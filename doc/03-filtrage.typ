@@ -9,16 +9,22 @@ faisant passer au _tamis_ d'un autre terme à trous. Par exemple :
 
 #image("assets/unification/2.svg")
 
-Ici on a un terme $f(g(a,b),a)$ et on veut le faire passer au tamis de $f(X,a)$
+Ici on a un terme $f(g(a,b),a)$ et on veut le filtrer avec $f(X,a)$
+
+== Filtrage:  Principe
 
 #image("assets/unification/3.svg")
 
 Les foncteurs de plus haut niveau correspondent: OK.
 
+== Filtrage:  Principe
+
 #image("assets/unification/4.svg")
 
 Les constantes en seconde position correspondent: OK.
 
+== Filtrage : Principe
+ 
 #image("assets/unification/5.svg")
 
 En première position du terme à filtrer on à un sous terme $g(a,b)$ et côté filtre on a une variable. OK. Donc avec la
@@ -29,7 +35,7 @@ Le filtrage impose quelque limitations (pour des raisons théoriques ? D'implém
 pas avoir de variables répétées. Autrement dit $f(X,X)$ est interdit. Le terme filtré pour sa part ne doit pas contenir
 de variables.
 
-== Filtrage: Et en Java ?
+== Filtrage : Et en Java ?
 
 #stickybox(
          tape: false,
@@ -48,5 +54,7 @@ sealed interface Maybe<A> {
 }    
 ```
 ]
+
+#pause
 
 *Le filtrage de* `Just<A>(var value)` *permet de capturer un fragment lié à* `value`
