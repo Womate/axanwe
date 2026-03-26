@@ -3,6 +3,8 @@
 
 == IA Connexionniste vs. IA Symbolique
 
+// 
+
 #pause
 
 #colorbox(

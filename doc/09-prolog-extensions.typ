@@ -4,3 +4,6 @@
 == Cas de l'égalité
 
 == Cas de la négation
+
+== Cas des contraintes
+
