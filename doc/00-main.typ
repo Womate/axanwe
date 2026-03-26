@@ -23,20 +23,20 @@
 
 #title-slide()
 
-#include "01-presentation-auteurs.typ"
-#include "02-ia.typ"
+#include "10-presentation-auteurs.typ"
+#include "20-ia.typ"
 
 = Fondations
 
-#include "03-filtrage.typ"
-#include "04-unification.typ"
-#include "05-logique-1er-order.typ"
-#include "06-clauses-de-horn.typ"
+#include "30-filtrage.typ"
+#include "40-unification.typ"
+#include "50-logique-1er-order.typ"
+#include "60-clauses-de-horn.typ"
 
 = Programmation Logique
 
-#include "07-prolog-auteurs.typ"
-#include "08-prolog-syntaxe.typ"
-#include "09-prolog-extensions.typ"
-#include "10-prolog-resolution.typ"
-#include "11-prolog-en-action.typ"
+#include "70-prolog-auteurs.typ"
+#include "80-prolog-syntaxe.typ"
+#include "90-prolog-extensions.typ"
+#include "100-prolog-resolution.typ"
+#include "110-prolog-en-action.typ"

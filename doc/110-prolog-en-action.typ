@@ -205,3 +205,10 @@ T = (_A→_A)
 ```prolog
 T1 = T2, T2 = (_A→_B)
 ```
+
+
+Dans le cadre de cette co-construction, les deux parties conviennent qu'une première
+étape structurante consistera en la réalisation, par Crédifix, d'un proof of concept (POC)
+technique, dont l'objectif sera d'automatiser l'estimation des travaux énergétiques
+nécessaires pour porter un bien de son DPE initial au DPE A dès l'annonce
+immobilière
