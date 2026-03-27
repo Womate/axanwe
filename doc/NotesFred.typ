@@ -225,6 +225,53 @@ Mais il nous manque un ingrédient : le moteur, ce qui donne des valeurs de vér
 
 === Résolution
 
+Jusque là nous avons parlé de la syntaxe de la logique du premier ordre, mais comme pour tout langage il faut aussi
+en donner la *sémantique*, c'est-à-dire le *sens* de chaque construction du langage. De façon générale il y a plusieurs
+façons de procéder.
+
+Il y a une approche plus mathématique où l'on va définir un domaine d'interprétation (un modèle) qui va permettre de
+donner des valeurs de vérité aux formules du langage. C'est bien quand on veut étudier les propriétés d'un langage
+d'un point de vue théorique.
+
+Et il y a une approche plus *opérationnelle* où l'on va chercher à déduire les formules par calcul. Cette approche est
+plus adaptée pour construire un environnement d'exécution pour un *langage de programmation*. Plusieurs approches ont
+été proposées comme le déduction naturelle, le calcul des séquents ou la *résolution*.
+
+Le principe de résolution on le doit à #link("https://fr.wikipedia.org/wiki/John_Alan_Robinson")[John Alan Robinson]
+mathématicien et informaticien anglais, ayant travaillé sur la démonstration automatique de théorèmes, et a qui on doit
+aussi les prémices d'un algorithme d'unification efficace.
+#image("assets/résolution/John_Alan_Robinson_IMG_0493.jpg")
+
+La résolution on la retrouve au cœur des systèmes de preuve automatiques. *Prolog* s'appuie sur une version raffinée, la
+*SLD-résolution* qui permet prouver une formule à partir d'un ensemble de *clauses de Horn*.
+
+=== SLD-résolution (succès)
+
+#image("assets/résolution/1.svg")
+#image("assets/résolution/2.svg")
+#image("assets/résolution/3.svg")
+#image("assets/résolution/4.svg")
+#image("assets/résolution/5.svg")
+
+=== SLD-résolution (échec)
+
+#image("assets/résolution-échec/1.svg")
+#image("assets/résolution-échec/2.svg")
+#image("assets/résolution-échec/3.svg")
+#image("assets/résolution-échec/4.svg")
+#image("assets/résolution-échec/5.svg")
+
+
+=== SLD-résolution (échec)
+
+#image("assets/résolution-synthèse/1.svg")
+#image("assets/résolution-synthèse/2.svg")
+#image("assets/résolution-synthèse/3.svg")
+#image("assets/résolution-synthèse/4.svg")
+#image("assets/résolution-synthèse/5.svg")
+#image("assets/résolution-synthèse/6.svg")
+#image("assets/résolution-synthèse/7.svg")
+
 === Négation
 
 == Prolog en Action
