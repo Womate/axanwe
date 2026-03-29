@@ -1,14 +1,18 @@
 #import "@preview/touying:0.6.2": *
 #import "@preview/colorful-boxes:1.4.3": *
 
-== IA Connexionniste vs. IA Symbolique
+== A propos du titre
+
+Effet putaclic !
+
+== Approche Connexionniste vs. Approche Symbolique
 
 // 
 
 #pause
 
 #colorbox(
-    title:"IA Connexioniste",
+    title:"Approche Connexioniste",
     color: "blue",
     radius: 2pt,
     width: auto,
@@ -24,7 +28,7 @@
 #pause
 
 #colorbox(
-    title:"IA Symbolique",
+    title:"Approche Symbolique",
     color: "blue",
     radius: 2pt,
     width: auto,

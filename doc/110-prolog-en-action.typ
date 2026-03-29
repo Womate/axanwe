@@ -79,13 +79,9 @@ M = 1_000.0
 
 #pause
 
-#colorbox(
-    color:"blue",
-)[
-On introduit la notation *$Γ ⊢ M : T$*, où $Γ$ est une liste de paires de la forme 
-$ x: B$ où $x$ est une variable et $B$ un type, $M$  est un terme et $T$ un type. 
-Elle se lit « dans le contexte $Γ$, le terme $M$ a pour type $T$.
-]
+La notation *$Γ ⊢ M : T$*, où $Γ$ est une liste de paires de la forme 
+$ x: B$ où $x$ est une variable et $B$ un type, $M$  est un terme et $T$ un type,
+se lit « dans le contexte $Γ$, le terme $M$ a pour type $T$.
 
 #pause
 
@@ -93,8 +89,9 @@ Elle se lit « dans le contexte $Γ$, le terme $M$ a pour type $T$.
     title:"Représentation d'une règles de typage",
     color:"blue",
 )[
-Une règle de typage est de la forme *$(Γ_1 ⊢ M_1 : T_1 #h(5pt) dots #h(5pt) Γ_n ⊢ M_n : T_n) / (Γ ⊢ M : T)$* et doit se 
-comprendre ainsi:  "si $Γ_1 ⊢ M_1 : T_1 #h(5pt) dots #h(5pt) Γ_n ⊢ M_n : T_n$ alors $Γ ⊢ M : T$".
+#v(5pt)
+Une règle de typage est de la forme: *$(Γ_1 ⊢ M_1 : T_1 #h(5pt) dots #h(5pt) Γ_n ⊢ M_n : T_n) / (Γ ⊢ M : T)$*
+et doit se comprendre ainsi:  "si $Γ_1 ⊢ M_1 : T_1 #h(5pt) dots #h(5pt) Γ_n ⊢ M_n : T_n$ alors $Γ ⊢ M : T$".
 ]
 
 #pause
@@ -205,10 +202,3 @@ T = (_A→_A)
 ```prolog
 T1 = T2, T2 = (_A→_B)
 ```
-
-
-Dans le cadre de cette co-construction, les deux parties conviennent qu'une première
-étape structurante consistera en la réalisation, par Crédifix, d'un proof of concept (POC)
-technique, dont l'objectif sera d'automatiser l'estimation des travaux énergétiques
-nécessaires pour porter un bien de son DPE initial au DPE A dès l'annonce
-immobilière

@@ -41,14 +41,14 @@ de variables.
          tape: false,
 )[    
 ```Java
-sealed interface Maybe<A> {
-    record Just<A>(A value) implements Maybe<A> {}
-    record Nothing<A>() implements Maybe<A> {}
+sealed interface Nat {
+    record Zero() implements Nat {}
+    record Succ(Nat value) implements Nat {}
 
-    default <B> Maybe<B> map(Function<? super A, ? extends B> mapper) {
+    default Nat add(Nat n) {
         return switch (this) {
-            case Just<A>(var value) -> new Just<>(mapper.apply(value));
-            case Nothing<A>() -> new Nothing<>();
+            case Zero() -> n;
+            case Succ(var p) -> Succ(p.add(n))
         };
     }
 }    
@@ -57,4 +57,4 @@ sealed interface Maybe<A> {
 
 #pause
 
-*Le filtrage de* `Just<A>(var value)` *permet de capturer un fragment lié à* `value`
+*Le motif* `Succ(var p)` *permet de capturer le predecesseur en le liant à la variable* `p`
