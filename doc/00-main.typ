@@ -37,6 +37,15 @@
 
 #include "70-prolog-auteurs.typ"
 #include "80-prolog-syntaxe.typ"
-#include "90-prolog-extensions.typ"
-#include "100-prolog-resolution.typ"
-#include "110-prolog-en-action.typ"
+#include "90-prolog-resolution.typ"
+
+= Prolog étendu
+
+#include "100-prolog-extensions.typ"
+#include "110-prolog-contrainte.typ"
+
+= Prolog en action !
+
+#include "120-prolog-en-action.typ"
+
+#include "130-conclusion.typ"

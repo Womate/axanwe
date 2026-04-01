@@ -1,8 +1,6 @@
 #import "@preview/touying:0.6.2": *
 #import "@preview/colorful-boxes:1.4.3": *
 
-= Prolog en action !
-
 == Description de la règle d'emprunt capée à 35%
 
 #colorbox(
@@ -18,6 +16,8 @@ L’établissement bancaire détermine votre *capacité* d'endettement en appliq
          tape: false,
 )[
 ```prolog
+:- use_module(library(clpr)).
+
 detteMaximumPourcent(35).
 
 dette(famille(Ressources),mensualite(Capacite),dettePourcent(Effort)) :-
