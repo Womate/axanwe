@@ -30,25 +30,33 @@ français propose une méthode pour déterminer si on peut trouver une substitut
 termes identiques. Ici, il n'y a plus d'asymétrie entre terme à filter et filtre. Les deux termes ont le même
 statut. Et plus de limitation sur les variables : on peut trés bien les répéter dans un terme.
 
-#image("assets/unification/6.svg")
+== Principe d'unification
 
 #image("assets/unification/6.svg")
 
-On prend les mêmes et on recommence.
+#pause On prend les mêmes et on recommence.
+
+== Principe d'unification
 
 #image("assets/unification/7.svg")
 
 Le foncteur de plus haut niveau est le même. OK.
+
+== Principe d'unification
 
 #image("assets/unification/8.svg")
 
 Le premier sous terme est un foncteur $g$ (à droite) et le second une variable $X$ (à gauche). On a donc une première
 substitution qui émerge $sigma = { X arrow.r.bar g(Y, b) }$.
 
+== Principe d'unification
+
 #image("assets/unification/9.svg")
 
 Le second sous terme est une variable $Y$ (à droite) et une constante $a$ (à gauche). Ce qui complète la substitution
 $sigma = { X arrow.r.bar g(Y, b), Y arrow.r.bar a }$.
+
+== Principe d'unification
 
 Sans rentrer dans plus de détails, l'unification est un processus gourmand, qui à donné lieu à pas mal de travaux de
 recherche d'optimisation. En particulier par #link("https://fr.wikipedia.org/wiki/John_Alan_Robinson")[Alan Robinson]

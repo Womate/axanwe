@@ -1,10 +1,6 @@
 #import "@preview/touying:0.6.2": *
 #import "@preview/colorful-boxes:1.4.3": *
 
-== A propos du titre
-
-Effet putaclic !
-
 == Approche Connexionniste vs. Approche Symbolique
 
 // 

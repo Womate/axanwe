@@ -1,10 +1,6 @@
 #import "@preview/touying:0.6.2": *
 #import "@preview/colorful-boxes:1.4.3": *
 
-== Contrôle du retour arrière
-
-Presentation du CUT
-
 == Cas de l'égalité
 
 #stickybox(
@@ -17,9 +13,13 @@ eq(X,X).
 ```
 ]
 
+== Contrôle du retour arrière
+
+Presentation du CUT
+
 == Cas du call/1
 
-call(X) lorsque X est instancé à un terme syntaxiquement correct, lance le but en question.
+Homoiconicité -> call(X) lorsque X est instancé à un terme syntaxiquement correct, lance le but en question.
 
 == Cas de la négation
 
