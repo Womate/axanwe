@@ -8,7 +8,7 @@
    version="1.1"
    id="svg5"
    inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
-   sodipodi:docname="6.svg"
+   sodipodi:docname="5b.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -72,25 +72,6 @@
          style="fill:context-stroke;fill-rule:evenodd;stroke:none"
          id="arrow2L-3-3" />
     </marker>
-    <marker
-       style="overflow:visible"
-       id="Arrow2-7-3"
-       refX="0"
-       refY="0"
-       orient="auto-start-reverse"
-       inkscape:stockid="Arrow2"
-       markerWidth="7.6999998"
-       markerHeight="5.5999999"
-       viewBox="0 0 7.7 5.6"
-       inkscape:isstock="true"
-       inkscape:collect="always"
-       preserveAspectRatio="xMidYMid">
-      <path
-         transform="scale(0.7)"
-         d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
-         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
-         id="arrow2L-3-6" />
-    </marker>
   </defs>
   <sodipodi:namedview
      id="namedview7"
@@ -103,8 +84,8 @@
      inkscape:document-units="mm"
      showgrid="false"
      inkscape:zoom="0.95875071"
-     inkscape:cx="1053.9758"
-     inkscape:cy="464.14568"
+     inkscape:cx="1331.4201"
+     inkscape:cy="227.37923"
      inkscape:window-width="1920"
      inkscape:window-height="1172"
      inkscape:window-x="0"
@@ -123,12 +104,12 @@
        id="tspan804"
        x="55.050247"
        y="81.362221"
-       style="fill:#00000f;fill-opacity:1">p(a).</tspan><tspan
+       style="fill:#cb4b16;fill-opacity:1">p(a).</tspan><tspan
        sodipodi:role="line"
        x="55.050247"
        y="118.02885"
        id="tspan808"
-       style="fill:#cb4b16;fill-opacity:1">p(b).</tspan><tspan
+       style="fill:#000000;fill-opacity:1">p(b).</tspan><tspan
        sodipodi:role="line"
        x="55.050247"
        y="154.69547"
@@ -158,11 +139,6 @@
      d="M 904.07763,227.61718 829.9,264.61732"
      id="path867-6"
      sodipodi:nodetypes="cc" />
-  <path
-     style="fill:none;stroke:#000000;stroke-width:1.88976;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2-7-3)"
-     d="m 1039.7918,227.72094 74.1777,37.00014"
-     id="path867-6-7"
-     sodipodi:nodetypes="cc" />
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.3333px;line-height:1.25;font-family:Iosevka;-inkscape-font-specification:'Iosevka, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
@@ -183,16 +159,6 @@
        id="tspan1305-2"
        x="753.59082"
        y="314.86188">?- q(a).</tspan></text>
-  <text
-     xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.3333px;line-height:1.25;font-family:Iosevka;-inkscape-font-specification:'Iosevka, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
-     x="1080.5317"
-     y="314.86188"
-     id="text1307-1-9"><tspan
-       sodipodi:role="line"
-       id="tspan1305-2-7"
-       x="1080.5317"
-       y="314.86188">?- q(b).</tspan></text>
   <path
      style="fill:none;stroke:#000000;stroke-width:1.88976;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2-7-7)"
      d="m 826.20417,340.15748 v 34.32459"
@@ -210,4 +176,18 @@
        y="433.43704"><tspan
    style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.3333px;font-family:Iosevka;-inkscape-font-specification:'Iosevka, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ff0000;fill-opacity:1"
    id="tspan4068">Échec</tspan> </tspan></text>
+  <path
+     style="fill:none;stroke:#6c71c4;stroke-width:1.88976378;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-dasharray:5.6692915, 1.88976383;marker-end:url(#Arrow2-7);stroke-dashoffset:0;fill-opacity:1"
+     d="M 886.82403,422.30497 C 955.1922,400.01734 975.93147,245.26706 975.93147,245.26706"
+     id="path385" />
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:32px;line-height:1.25;font-family:Iosevka;-inkscape-font-specification:'Iosevka, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#6c71c4;fill-opacity:1"
+     x="976.02179"
+     y="360.17316"
+     id="text1179"><tspan
+       sodipodi:role="line"
+       id="tspan1177"
+       x="976.02179"
+       y="360.17316">Backtrack</tspan></text>
 </svg>

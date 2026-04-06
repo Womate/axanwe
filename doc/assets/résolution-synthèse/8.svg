@@ -8,7 +8,7 @@
    version="1.1"
    id="svg5"
    inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
-   sodipodi:docname="6.svg"
+   sodipodi:docname="8.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -91,6 +91,25 @@
          style="fill:context-stroke;fill-rule:evenodd;stroke:none"
          id="arrow2L-3-6" />
     </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow2-7-7-8"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Arrow2"
+       markerWidth="7.6999998"
+       markerHeight="5.5999999"
+       viewBox="0 0 7.7 5.6"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="arrow2L-3-3-4" />
+    </marker>
   </defs>
   <sodipodi:namedview
      id="namedview7"
@@ -103,8 +122,8 @@
      inkscape:document-units="mm"
      showgrid="false"
      inkscape:zoom="0.95875071"
-     inkscape:cx="1053.9758"
-     inkscape:cy="464.14568"
+     inkscape:cx="947.5873"
+     inkscape:cy="345.24094"
      inkscape:window-width="1920"
      inkscape:window-height="1172"
      inkscape:window-x="0"
@@ -128,11 +147,12 @@
        x="55.050247"
        y="118.02885"
        id="tspan808"
-       style="fill:#cb4b16;fill-opacity:1">p(b).</tspan><tspan
+       style="fill:#000000;fill-opacity:1">p(b).</tspan><tspan
        sodipodi:role="line"
        x="55.050247"
        y="154.69547"
-       id="tspan810">q(b).</tspan><tspan
+       id="tspan810"
+       style="fill:#00000f;fill-opacity:1">q(b).</tspan><tspan
        sodipodi:role="line"
        x="55.050247"
        y="191.36209"
@@ -210,4 +230,24 @@
        y="433.43704"><tspan
    style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.3333px;font-family:Iosevka;-inkscape-font-specification:'Iosevka, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ff0000;fill-opacity:1"
    id="tspan4068">Échec</tspan> </tspan></text>
+  <path
+     style="fill:none;stroke:#000000;stroke-width:1.88976;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2-7-7-8)"
+     d="m 1153.1451,340.15748 v 34.32459"
+     id="path867-6-6-5"
+     sodipodi:nodetypes="cc" />
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.3333px;line-height:1.25;font-family:Iosevka;-inkscape-font-specification:'Iosevka, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+     x="1105.321"
+     y="430.59305"
+     id="text1307-1-1-0"><tspan
+       sodipodi:role="line"
+       id="tspan1305-2-2-3"
+       x="1105.321"
+       y="430.59305">?- ∅. </tspan></text>
+  <path
+     style="fill:none;stroke:#6c71c4;stroke-width:3.77952756;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-dasharray:3.77952756, 3.77952756;marker-end:url(#Arrow2-7-7);stroke-dashoffset:0"
+     d="m 883.06522,79.885268 c 0,0 -97.46532,16.394843 -154.24029,138.152332 -56.35365,120.85395 -25.96789,234.92034 18.41933,271.05261 42.50904,34.6034 119.93286,18.99496 143.99008,-4.76943 43.71285,-43.18076 30.74668,-146.36503 38.85978,-171.22298 7.58977,-23.25451 18.93285,-39.81838 48.40398,-39.30216 25.009,0.43806 45.7949,14.92056 55.1481,67.00144 9.9166,55.21801 8.9059,116.87586 73.1936,123.83682"
+     id="path1110"
+     sodipodi:nodetypes="cssssssc" />
 </svg>

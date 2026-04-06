@@ -126,5 +126,7 @@ dernier choix possible et essayer une autre règle.
 #image("assets/résolution-synthèse/3.svg")
 #image("assets/résolution-synthèse/4.svg")
 #image("assets/résolution-synthèse/5.svg")
+#image("assets/résolution-synthèse/5b.svg")
 #image("assets/résolution-synthèse/6.svg")
 #image("assets/résolution-synthèse/7.svg")
+#image("assets/résolution-synthèse/8.svg")
