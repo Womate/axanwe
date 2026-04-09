@@ -3,20 +3,22 @@
 
 == Cas des contraintes
 
-#align(center)[
-    *#link(
-        "https://dl.acm.org/doi/pdf/10.1145/41625.41635", 
-        "Constraint logic programming"
-    )* 
+#table(
+  columns: (auto, auto),
+  inset: 10pt,
+  align: (right,left),
+  stroke: none,
+  image("assets/extensions/CLP.png", height:60%),
+  [
+    La  programmation par contraintes est
+
+    $triangle.filled.small.r$ un extension de la SLD-résolution classique et
+      
+    $triangle.filled.small.r$ intègre un solveur de contraintes.
     
-    J. Jaffar & J.-L. Lassez \~ 1987
-]
-
-La CLP(X) (Constraint Logic Programming), ou CSLD-Résolution est
-- un extension de la SLD-résolution classique et  
-- intègre un solveur de contraintes.
-
-X représente le domaine de contraintes (réels, booléens, etc.) 
+    On parle de CLP(X) ou X représente le domaine de contraintes (réels, booléens, etc.) 
+  ]
+)
 
 == Cas des contraintes
 

@@ -1,17 +1,38 @@
 #import "@preview/touying:0.6.2": *
 #import "@preview/colorful-boxes:1.4.3": *
+#import emoji: fire
+
+== Convention
+
+Dans la suite de la présentation on nomme terme: #pause
+
+$triangle.filled.small.r$ un litéral (entier, caractère etc.) e.g. 1, *'a'* #pause 
+
+$triangle.filled.small.r$ un atome (commence par une minuscule) e.g. *albert*, *$beta$* #pause 
+ 
+$triangle.filled.small.r$ un foncteur e.g. *personne(robert, smith)*, *f("Hello",1)*
+
+$triangle.filled.small.r$ une variable (commence par une majuscule) e.g. X, *Qui*, *$Gamma$* #pause 
+
+== Term: Vue comme arbre / graphe 
+
+Les termes peuvent être vus comme des graphes orientés.
+
+#image("assets/unification/1.svg")
 
 == Filtrage:  Principe
 
 *Pattern Matching* (ou filtrage de motifs)
- - présent dans OCaml, Haskell, Rust ou Java par exemple. #pause
- - Capturer des valeurs d'un terme en le faisant passer au _tamis_. #pause
+
+$triangle.filled.small.r$  présent dans OCaml, Haskell, Rust ou Java par exemple. #pause
+
+$triangle.filled.small.r$  Capturer des valeurs d'un terme en le faisant passer au _tamis_.
 
 == Filtrage:  Principe
 
 #image("assets/unification/2.svg")
 
-Ici on a un terme `f(g(a,b),a)` et on veut le filtrer avec `f(X,a)` avec `X` une variable. 
+Ici on a un terme *`f(g(a,b),a)`* et on veut le filtrer avec *`f(X,a)`* avec *`X`* une variable. 
 
 == Filtrage:  Principe
 
@@ -29,19 +50,20 @@ Les constantes en seconde position correspondent.
  
 #image("assets/unification/5.svg")
 
-En première position on a le terme *`g(a,b)`* et de l'autre côté la variable *`X`*. 
+La substitution *$sigma = { X arrow.r.bar $ `g(a,b)`$ }$* permet de rendre le filtre identique au terme.
 
-== Filtrage : Principe
+== Filtrage : Limitations
 
-Donc la substitution *$sigma = { X arrow.r.bar $ `g(a,b)`$ }$* permet de rendre le filtre identique au terme à filtrer.
+ 
+$triangle.filled.small.r$ le filtre ne peut pas avoir de variables répétées e.g. *`f(X,X)`* est interdit. #pause 
+ 
+$triangle.filled.small.r$ Le terme filtré pour sa part ne doit pas contenir de variables il est fermé. #pause
 
-Le filtrage impose quelque limitations :
- - le filtre ne peut pas avoir de variables répétées e.g. *`f(X,X)`* est interdit. 
- - Le terme filtré pour sa part ne doit pas contenir de variables.
+On parle alors de terme hérité.
 
 == Filtrage : Et en Java ?
 
-#stickybox(
+#pause #stickybox(
          tape: false,
 )[    
 ```Java
