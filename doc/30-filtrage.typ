@@ -59,8 +59,6 @@ $triangle.filled.small.r$ le filtre ne peut pas avoir de variables répétées e
  
 $triangle.filled.small.r$ Le terme filtré pour sa part ne doit pas contenir de variables il est fermé. #pause
 
-On parle alors de terme hérité.
-
 == Filtrage : Et en Java ?
 
 #pause #stickybox(

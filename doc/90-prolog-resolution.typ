@@ -49,7 +49,7 @@ Si l'algorithme est en échec, il utilise le retour en arrière (backtrack) pour
 #image("assets/résolution-échec/4.svg") #pagebreak()
 #image("assets/résolution-échec/5.svg") #pagebreak()
 
-== SLD-résolution avec bactrack
+== SLD-résolution avec backtrack
 
 #image("assets/résolution-synthèse/1.svg") #pagebreak()
 #image("assets/résolution-synthèse/2.svg") #pagebreak()
@@ -59,7 +59,11 @@ Si l'algorithme est en échec, il utilise le retour en arrière (backtrack) pour
 #image("assets/résolution-synthèse/5b.svg") #pagebreak()
 #image("assets/résolution-synthèse/6.svg") #pagebreak()
 #image("assets/résolution-synthèse/7.svg") #pagebreak()
-#image("assets/résolution-synthèse/8.svg") #pagebreak()
+
+== SLD-résolution avec backtrack
+
+#image("assets/résolution-synthèse/8.svg") 
+Note: Parler de synthèse de terme par opposition à l'héritage de terme
 
 == Exemple Prolog
 

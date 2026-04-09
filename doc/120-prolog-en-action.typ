@@ -202,3 +202,6 @@ T = (_A→_A)
 ```prolog
 T1 = T2, T2 = (_A→_B)
 ```
+
+== Un peu de live coging ?
+
