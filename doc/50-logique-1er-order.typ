@@ -18,15 +18,16 @@
 
 == Logique du premier ordre: définition
 
-Langage des termes:
+*Langage des termes*
 #block[#h(1em) $X in "Variables", f in "Symbole"_f$ ]
 #block[#h(1em) $t ::= X | f | f(t_1,...,t_n)$ ]
 
 #pause
-Langage des expressions:
+*Langage des prédicats*
 #block[#h(1em) $p in "Symbole"_P$ ]
 #block[#h(1em) $e ::= not e | e_1 and e_2 | e_1 or e_2 | e_1 arrow.r.double e_2 | p | p(t_1,...,t_n) | forall X.e | exists X.e$ ]
 
+#v(1em)
 #pause
 Toute personne à une mère et un père biologique:
 #block[#h(1em) $forall X.(exists Y."mere"(Y , X)) and (exists Z."pere"(Z, X))$ ]
@@ -37,10 +38,10 @@ Toute personne à une mère et un père biologique:
 Système formel avancée pour la manipulation d'assertions logiques: 
 
 #pause
-$triangle.filled.small.r$ Mise en forme prénexe par regroupement en tête des quantificateurs *$forall$* et *$exists$* 
+$triangle.filled.small.r$ Mise en *Forme Prénexe* par regroupement en tête des quantificateurs *$forall$* et *$exists$* 
 
 #pause
-$triangle.filled.small.r$ Principe de skolémisation par l'élimination des quantificateurs *$exists$*
+$triangle.filled.small.r$ Principe de *Skolémisation* par l'élimination des quantificateurs *$exists$*
 
 
 #pause

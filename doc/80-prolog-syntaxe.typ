@@ -24,7 +24,7 @@ b :- a1, a2, ..., aN.
 ]
 
 #pause
-Ce qui se lit : « `b` est vrai si `a1` et vrai et `a2` et vrai jusqu'à `aN` ». 
+Qui se lit : « `b` est vrai si `a1` et vrai et `a2` et vrai jusqu'à `aN` ». 
  
 == Clauses et but 
 

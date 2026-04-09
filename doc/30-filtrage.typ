@@ -10,9 +10,9 @@ $triangle.filled.small.r$ un litéral (entier, caractère etc.) e.g. 1, *'a'* #p
 
 $triangle.filled.small.r$ un atome (commence par une minuscule) e.g. *albert*, *$beta$* #pause 
  
-$triangle.filled.small.r$ un foncteur e.g. *personne(robert, smith)*, *f("Hello",1)*
+$triangle.filled.small.r$ un foncteur e.g. *personne(robert, smith)*, *f("Hello",1)* #pause
 
-$triangle.filled.small.r$ une variable (commence par une majuscule) e.g. X, *Qui*, *$Gamma$* #pause 
+$triangle.filled.small.r$ une variable (commence par une majuscule) e.g. X, *Qui*, *$Gamma$* 
 
 == Term: Vue comme arbre / graphe 
 

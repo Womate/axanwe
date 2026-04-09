@@ -41,7 +41,7 @@ Assertion native appelée CUT notée: *!*
 #pause
 On distingue les green et red cut.
 
-$triangle.filled.small.r$ *Green cut* : Sa suppression ne change rien
+$triangle.filled.small.r$ *Green cut* : sa suppression ne change rien aux réponses
 
 $triangle.filled.small.r$ *Red cut* : sa suppression peut changer les réponses
 
