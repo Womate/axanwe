@@ -1,8 +1,8 @@
-:- use_module(library(clpr)).
-
 /*
  * This is a computation with constraints
  */
+
+:- use_module(library(clpr)).
 
 maxDebt(35).
 
