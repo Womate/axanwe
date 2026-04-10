@@ -11,7 +11,7 @@
   stroke: none,
   image("assets/résolution/John_Alan_Robinson_IMG_0493.jpg", height: 50%),
   [#link("https://fr.wikipedia.org/wiki/John_Alan_Robinson")[John Alan Robinson]
-mathématicien et informaticien anglais, propose un principe de réslution.
+mathématicien et informaticien anglais, propose un principe de résolution.
 
 La résolution on la retrouve au cœur des systèmes de preuve automatiques. *Prolog* s'appuie sur une version raffinée, la
 *SLD-résolution* qui permet prouver une formule à partir d'un ensemble de *clauses de Horn*.]
@@ -63,7 +63,7 @@ Si l'algorithme est en échec, il utilise le retour en arrière (backtrack) pour
 == SLD-résolution avec backtrack
 
 #image("assets/résolution-synthèse/8.svg") 
-Note: Parler de synthèse de terme par opposition à l'héritage de terme
+// Parler de synthèse de terme par opposition à l'héritage de terme
 
 == Exemple Prolog
 

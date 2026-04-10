@@ -8,7 +8,7 @@
 #pause
 
 #colorbox(
-    title:"Approche Connexioniste",
+    title:"Approche Connexionniste",
     color: "blue",
     radius: 2pt,
     width: auto,
