@@ -3,7 +3,41 @@
 
 == Frédéric Cabestre
 
-TODO
+#table(
+  columns: (auto, auto),
+  inset: 10pt,
+  align: (right,left),
+  stroke: none,
+  image("assets/authors/Moa.png", height:50%),
+  [
+        #pause Artisan du logiciel revendiqué, issu du monde académique.
+
+        #pause *Mobile Device Management*
+
+        #link("https://www.bravas.io")[Bravas] est un système de gestion unifiée des appareils, des identités et de la sécurité, conçue pour les PME.
+
+        #pause Bravas vient d'être acquis par #link("https://remote.com/")[Remote], solution de RH et de paie international.
+  ]
+)
+
+== Frédéric Cabestre
+
+#table(
+  columns: (auto, auto),
+  inset: 10pt,
+  align: (right,left),
+  stroke: none,
+  image("assets/authors/Moi.png", height:50%),
+  [
+        #pause Artisan du logiciel revendiqué, issu du monde académique.
+
+        #pause *Mobile Device Management*
+
+        #link("https://www.bravas.io")[Bravas] est un système de gestion unifiée des appareils, des identités et de la sécurité, conçue pour les PME.
+
+        #pause Bravas vient d'être acquis par #link("https://remote.com/")[Remote], solution de RH et de paie international.
+  ]
+)
 
 == Didier Plaindoux
 
