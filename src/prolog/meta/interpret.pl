@@ -1,6 +1,6 @@
 solve(true) :- !.
 solve((A, B)) :- !, solve(A), solve(B).
-solve(Goal) :- clause(Goal, Body), solve(Body).
+solve(Goal) :- rule(Goal, Body), solve(Body).
 
 /*
     femme(anne).
@@ -10,7 +10,7 @@ solve(Goal) :- clause(Goal, Body), solve(Body).
     mere(X,Y) :- femme(X), parent(X,Y).
 */
 
-clause(femme(anne), true).
-clause(parent(anne,paul), true).
-clause(parent(anne,magali), true).
-clause(mere(X,Y),(femme(X), parent(X,Y))).
+rule(femme(anne), true).
+rule(parent(anne,paul), true).
+rule(parent(anne,magali), true).
+rule(mere(X,Y),(femme(X), parent(X,Y))).
