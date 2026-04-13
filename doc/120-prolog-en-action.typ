@@ -121,7 +121,7 @@ $
 ```prolog
 system(Γ ⊢ X : T) :-
     atom(X),!,
-    in_gamma(X:T, Γ).        
+    member(X:T, Γ).        
 ```
         ]
         #pause    

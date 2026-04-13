@@ -46,10 +46,11 @@ $triangle.filled.small.r$ Principe de *Skolémisation* par l'élimination des qu
 
 #pause
 #v(1em)
-*Transformations mécanisables mais Quid de la résolution ?*
+*Transformations mécanisables mais quid de la Résolution ?*
 #v(1em)
 
 #pause
 $triangle.filled.small.r$ Moteur de satisfiabilité modulo théories aka Solveur SMT ou
 
+#pause
 $triangle.filled.small.r$ Limitation à un sous ensemble : les clauses de Horn !

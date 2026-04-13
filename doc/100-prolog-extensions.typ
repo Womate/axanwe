@@ -4,7 +4,7 @@
 
 == Cas de l'égalité
 
-Egalité structurelle induite par la clause:
+Egalité structurelle induite par la règle:
 
 #pause
 #stickybox(
@@ -34,7 +34,7 @@ equals(X,X).
 Ne pas essayer des règles alternatives pour satisfaire le prédicat courant si la suite échoue.
 
 #pause
-Assertion native appelée CUT notée: *!*  
+$triangle.filled.small.r$ Assertion native appelée CUT aussi notée *!*  
 
 #v(2em)
 
@@ -45,11 +45,13 @@ $triangle.filled.small.r$ *Green cut* : sa suppression ne change rien aux répon
 
 $triangle.filled.small.r$ *Red cut* : sa suppression peut changer les réponses
 
-== Cas du call/1 ou l'homoiconicité
+== Cas du call/1
 
 *`call(X)`* lorsque X est instancé à un terme syntaxiquement correct, lance le but en question.
 
-#emoji.lightbulb Capacité au langage à manipuler ses termes #pause ... comme Lisp.
+#emoji.lightbulb Capacité au langage à manipuler ses termes #pause ... comme Lisp. #pause
+
+$triangle.filled.small.r$ Principe d'homoiconicité
 
 #v(1em)
 

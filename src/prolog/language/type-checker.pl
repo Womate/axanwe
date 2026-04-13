@@ -3,9 +3,6 @@
 :- op(900, xfy, user:(⇒)).
 :- op(800, yfx, user:(@)).
 
-in_gamma(X:T, (_,X:T)).
-in_gamma(B, (L,_)) :- in_gamma(B,L).
-
 /*
  *
  *  --------------------
@@ -14,7 +11,7 @@ in_gamma(B, (L,_)) :- in_gamma(B,L).
 system(Γ ⊢ X : T, proof(gamma(X,T))) :-
     atom(X),
     !,
-    in_gamma(X:T, Γ).
+    member(X:T, Γ).
 
 /*
  *  Γ ⊢ X : T1 → T2   Γ ⊢ Y : T1

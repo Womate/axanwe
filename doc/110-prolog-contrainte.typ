@@ -10,45 +10,50 @@
   stroke: none,
   image("assets/extensions/CLP.png", height:60%),
   [
-    La  programmation par contraintes est
+    La  programmation par contraintes est: #pause
 
-    $triangle.filled.small.r$ un extension de la SLD-résolution classique et
+    $triangle.filled.small.r$ une extension de la SLD-résolution classique et #pause
       
     $triangle.filled.small.r$ intègre un solveur de contraintes.
     
-    On parle de CLP(X) ou X représente le domaine de contraintes (réels, booléens, etc.) 
+    On parle de *CLP modulo théorie* (réels, etc.) 
   ]
 )
 
-== Résolution d'equations du second degré 
+== Résolution d'equations du second degré sur les réels
 
 #stickybox(
          tape: false,
 )[
 ```prolog
 :- use_module(library(clpr)).
-
-resolutions(A*x^2 + B*x + C, [S1, S2]) :-
+```
+] #pause
+#stickybox(
+         tape: false,
+)[
+```prolog
+resolution(A*x^2 + B*x + C, [S1, S2]) :-
     { Delta = B^2 - 4*A*C, Delta > 0 },
     S1 = (-B - sqrt(Delta))/(2*A),
     S2 = (-B + sqrt(Delta))/(2*A). 
     
-resolutions(A*x^2 + B*x + C, [S]) :-
+resolution(A*x^2 + B*x + C, [S]) :-
     { Delta = B^2 - 4*A*C, Delta = 0 },
     S = -B/(2*A).     
 
-resolutions(A*x^2 + B*x + C, []) :-
+resolution(A*x^2 + B*x + C, []) :-
     { Delta = B^2 - 4*A*C, Delta < 0 }.     
 ```
 ]
 
-== Résolution d'equations du second degré 
+== Résolution d'equations du second degré sur les réels
 
 #stickybox(
          tape: false,
 )[
 ```prolog
-?- resolutions(A*x^2 + 3*x + 3, S).
+?- resolution(A*x^2 + 3*x + 3, S).
 ```
 ]
 
@@ -60,7 +65,7 @@ S = [(- 3-sqrt(_A))/(2*A), (- 3+sqrt(_A))/(2*A)],
 
 #pause *Solution 2:*
 ```prolog
-A = 0.75,g
+A = 0.75,
 S = [- 3/(2*0.75)] 
 ```
 
