@@ -2,24 +2,6 @@
 #import "@preview/colorful-boxes:1.4.3": *
 #import emoji: fire
 
-== Convention
-
-Dans la suite de la présentation on nomme terme: #pause
-
-$triangle.filled.small.r$ un litéral (entier, caractère etc.) e.g. 1, *'a'* #pause 
-
-$triangle.filled.small.r$ un atome (commence par une minuscule) e.g. *albert*, *$beta$* #pause 
- 
-$triangle.filled.small.r$ un foncteur e.g. *personne(robert, smith)*, *f("Hello",1)* #pause
-
-$triangle.filled.small.r$ une variable (commence par une majuscule) e.g. X, *Qui*, *$Gamma$* 
-
-== Term: Vue comme arbre / graphe 
-
-Les termes peuvent être vus comme des graphes orientés.
-
-#image("assets/unification/1.svg")
-
 == Filtrage:  Principe
 
 *Pattern Matching* (ou filtrage de motifs)
@@ -50,7 +32,7 @@ Les constantes en seconde position correspondent.
  
 #image("assets/unification/5.svg")
 
-La substitution *$sigma = { X arrow.r.bar $ `g(a,b)`$ }$* permet de rendre le filtre identique au terme.
+La substitution *$sigma = { X arrow.r.bar `g(a,b)` }$* permet de rendre le filtre identique au terme.
 
 == Filtrage : Limitations
 

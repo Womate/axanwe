@@ -2,52 +2,46 @@
 #import "@preview/colorful-boxes:1.4.3": *
 #import emoji: lightbulb
 
-== Cas de l'égalité
-
-Egalité structurelle induite par la règle:
-
-#pause
-#stickybox(
-         tape: false,
-)[
-```prolog
-equals(X,Y) :- X = Y.
-```
-]
-
-#v(1em)
-
-#pause
-Qui peut être en fait remplacée par l'assertion:
-
-#stickybox(
-         tape: false,
-)[
-```prolog
-equals(X,X).
-```
-]
-
 == Contrôle du retour arrière
 
 
 Ne pas essayer des règles alternatives pour satisfaire le prédicat courant si la suite échoue.
 
 #pause
-$triangle.filled.small.r$ Assertion native appelée CUT aussi notée *!*  
+$triangle.filled.small.r$ *Assertion native `!`* appelée CUT #pause  
 
-#v(2em)
+$triangle.filled.small.r$ *Green cut* : sa suppression ne change rien aux réponses #pause
+
+$triangle.filled.small.r$ *Red cut* : sa suppression peut changer les réponses #pause
+
+#stickybox(
+  tape: false,
+)[
+```prolog
+femme(anne).
+parent(anne, paul) :- !.
+parent(anne, magali).
+
+mere(X,Y) :- femme(X), parent(X,Y).
+```
+]
 
 #pause
-On distingue les green et red cut.
 
-$triangle.filled.small.r$ *Green cut* : sa suppression ne change rien aux réponses
+#stickybox(
+  tape: false,
+)[
+```Prolog
+?- mere(anne,P).
+``` 
+]
+   
+$exists$ `P`, `mere(anne,P)` ? Question ouverte avec *$sigma = {P arrow.r.bar "paul"}$* uniquement !
 
-$triangle.filled.small.r$ *Red cut* : sa suppression peut changer les réponses
 
 == Cas du call/1
 
-*`call(X)`* lorsque X est instancé à un terme syntaxiquement correct, lance le but en question.
+*`call(X)`* lorsque X est unifié à un atome ou un foncteur, lance le but en question.
 
 #emoji.lightbulb Capacité au langage à manipuler ses termes #pause ... comme Lisp. #pause
 
@@ -69,9 +63,20 @@ or(X,Y)  :- call(Y).
 #pause
 Cas d'usage d'un *Green Cut*.
 
+#pause
+#stickybox(
+         tape: false,
+)[
+```prolog
+?- and(or(true,false), true).
+```
+]
+
 == Cas de la négation
 
-Pas d’hypothèse de *monde clos* i.e. non monotone.
+Pas d’hypothèse de *monde clos* i.e. non monotone. #pause
+
+$triangle.filled.small.r$ Combinaison de *call* et de *cut* #pause
 
 #stickybox(
          tape: false,

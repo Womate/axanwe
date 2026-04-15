@@ -10,11 +10,11 @@
   stroke: none,
   image("assets/extensions/CLP.png", height:60%),
   [
-    La  programmation par contraintes est: #pause
+    La  programmation par contraintes: #pause
 
-    $triangle.filled.small.r$ une extension de la SLD-résolution classique et #pause
+    $triangle.filled.small.r$ est une extension de la SLD-résolution classique et #pause
       
-    $triangle.filled.small.r$ intègre un solveur de contraintes.
+    $triangle.filled.small.r$ intègre un solveur de contraintes. #pause
     
     On parle de *CLP modulo théorie* (réels, etc.) 
   ]

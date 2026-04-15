@@ -19,7 +19,7 @@
         #pause Bravas vient d'être acquis par #link("https://remote.com/")[Remote], solution de RH et de paie international.
   ]
 )
-
+/*
 == Frédéric Cabestre
 
 #table(
@@ -38,6 +38,7 @@
         #pause Bravas vient d'être acquis par #link("https://remote.com/")[Remote], solution de RH et de paie international.
   ]
 )
+*/
 
 == Didier Plaindoux
 

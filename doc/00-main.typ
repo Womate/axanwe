@@ -25,6 +25,7 @@
 
 #include "10-presentation-auteurs.typ"
 #include "20-ia.typ"
+#include "25-convention.typ"
 
 = Fondations
 
@@ -49,3 +50,5 @@
 #include "120-prolog-en-action.typ"
 
 #include "130-conclusion.typ"
+
+#title-slide()

@@ -23,7 +23,7 @@ Le processus est cyclique et suit une logique très précise :
 
 *$1$ Sélection* : choisit le premier littéral (le premier élément) de la question posée. #pause
 
-*$2$ Unification* : Cherche une règle ou un fait dont la tête s'unifie correspond à ce littéral. #pause
+*$2$ Unification* : Cherche une règle ou un fait dont la tête s'unifie avec ce littéral. #pause
 
 *$3$ Remplacement* : Le littéral est remplacé par le corps de la règle correspondante. #pause
 
@@ -106,3 +106,29 @@ $forall$ `X`, $forall$ `Y`,  `mere(X,Y)` est vrai si `femme(X)` et `parent(X,Y)`
 ]
    
 $exists$ `P`, `mere(anne,P)` ? Question ouverte avec *$sigma = {P arrow.r.bar "paul"}$* ou *$sigma = {P arrow.r.bar "magali"}$*
+
+== Cas de l'égalité
+
+Egalité structurelle induite par la règle:
+
+#pause
+#stickybox(
+         tape: false,
+)[
+```prolog
+equals(X,Y) :- X = Y.
+```
+]
+
+#v(1em)
+
+#pause
+Qui peut être en fait remplacée par l'assertion:
+
+#stickybox(
+         tape: false,
+)[
+```prolog
+equals(X,X).
+```
+]
