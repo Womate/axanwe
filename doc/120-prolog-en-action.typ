@@ -1,19 +1,17 @@
-#import "@preview/touying:0.6.2": *
+#import "@preview/touying:0.7.1": *
 #import "@preview/colorful-boxes:1.4.3": *
 
 == Description de la règle d'emprunt capée à 35%
 
-#colorbox(
+#pause#colorbox(
     title:"Comment déterminer votre capacité d’emprunt ?",
     color:"blue",
 )[
 L’établissement bancaire détermine votre *capacité* d'endettement en appliquant à vos *ressources* un taux d'*effort* qui ne doit, en principe, *pas dépasser 35 %*.
 ]
 
-#pause
-
 #stickybox(
-         tape: false,
+        tape: false,
 )[
 ```prolog
 :- use_module(library(clpr)).
@@ -21,11 +19,11 @@ L’établissement bancaire détermine votre *capacité* d'endettement en appliq
 detteMaximumPourcent(35).
 
 dette(famille(Ressources),mensualite(Capacite),dettePourcent(Effort)) :-
-    detteMaximumPourcent(DetteMaxPourcent),
-    {Capacite =< DetteMaxPourcent / 100 * Ressources},
-    {Effort = 100 * Capacite / Ressources}.
+   detteMaximumPourcent(DetteMaxPourcent),
+   { Capacite =< DetteMaxPourcent / 100 * Ressources },
+   { Effort = 100 * Capacite / Ressources }.
 ```
-]    
+]
 
 == Description de la règle d'emprunt capée à 35% \~ Exemples
 
@@ -77,15 +75,11 @@ M = 1_000.0
 
 == Système de type pour un $lambda$-calcul simple
 
-#pause
-
-La notation *$Γ ⊢ M : T$*, où $Γ$ est une liste de paires de la forme 
-$ x: B$ où $x$ est une variable et $B$ un type, $M$  est un terme et $T$ un type,
+#pause La notation *$Γ ⊢ M : T$*, où $Γ$ est une liste de paires de la forme 
+$ x: B$ où $x$ est une variable et $B$ un type, $M$  est un $lambda$-terme et $T$ un type,
 se lit « dans le contexte $Γ$, le terme $M$ a pour type $T$.
 
-#pause
-
-#colorbox(
+#pause #colorbox(
     title:"Représentation d'une règles de typage",
     color:"blue",
 )[
@@ -94,9 +88,7 @@ Une règle de typage est de la forme: *$(Γ_1 ⊢ M_1 : T_1 #h(5pt) dots #h(5pt)
 et doit se comprendre ainsi:  "si $Γ_1 ⊢ M_1 : T_1 #h(5pt) dots #h(5pt) Γ_n ⊢ M_n : T_n$ alors $Γ ⊢ M : T$".
 ]
 
-#pause
-
-#colorbox(
+#pause #colorbox(
     title:"Règles pour le λ-calcul simplement i.e. typé λ-→",
     color:"green",
 )[
@@ -106,9 +98,10 @@ $
 (Γ,x:T_1 ⊢ Y : T_2) / (Γ ⊢ lambda x.Y : T_1 → T_2) 
 $
 ]
+
 == Système de type pour un $lambda$-calcul simple
   
-#pause    
+#pause
     
 #table(
   columns: (50%,50%),
@@ -124,7 +117,7 @@ system(Γ ⊢ X : T) :-
     in_gamma(X:T, Γ).        
 ```
         ]
-        #pause    
+        #pause
     ],
     v(1em),v(1em),
     $ (Gamma ⊢ X : T_1 → T_2 #h(1em) Γ ⊢ Y : T_1) / (Γ ⊢ X #h(5pt) Y : T_2) #pause $,
@@ -141,7 +134,7 @@ system(Γ ⊢ (X @ Y) : T2) :-
         #pause
     ],
     v(1em),v(1em),
-    $ (Γ,x:T_1 ⊢ Y : T_2) / (Γ ⊢ lambda x.Y : T_1 → T_2) #pause $,   
+    $ (Γ,x:T_1 ⊢ Y : T_2) / (Γ ⊢ lambda x.Y : T_1 → T_2) #pause $,
     [
 #stickybox(
  tape: false,
@@ -202,6 +195,4 @@ T = (_A→_A)
 ```prolog
 T1 = T2, T2 = (_A→_B)
 ```
-
-== Un peu de live coging ?
 

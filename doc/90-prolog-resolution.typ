@@ -1,8 +1,8 @@
-#import "@preview/touying:0.6.2": *
+#import "@preview/touying:0.7.1": *
 #import "@preview/colorful-boxes:1.4.3": *
 #import "@preview/tdtr:0.5.4": *
 
-== Résolution
+== Prolog : Résolution
 
 #table(
   columns: (auto, auto),
@@ -13,11 +13,11 @@
   [#link("https://fr.wikipedia.org/wiki/John_Alan_Robinson")[John Alan Robinson]
 mathématicien et informaticien anglais, propose un principe de résolution.
 
-La résolution on la retrouve au cœur des systèmes de preuve automatiques. *Prolog* s'appuie sur une version raffinée, la
+#pause La résolution on la retrouve au cœur des systèmes de preuve automatiques. *Prolog* s'appuie sur une version raffinée, la
 *SLD-résolution* qui permet prouver une formule à partir d'un ensemble de *clauses de Horn*.]
 )
 
-== SLD-résolution (principe)
+== Prolog : SLD-résolution
 
 Le processus est cyclique et suit une logique très précise :
 
@@ -33,7 +33,7 @@ La SLD-résolution utilise deux règles de navigation: l'ordre des littéraux et
 
 Si l'algorithme est en échec, il utilise le retour en arrière (backtrack) pour revenir au dernier choix possible et essayer une autre règle.
 
-== SLD-résolution (succès)
+== Prolog : SLD-résolution par l'exemple
 
 #image("assets/résolution/1.svg") #pagebreak()
 #image("assets/résolution/2.svg") #pagebreak()
@@ -41,7 +41,7 @@ Si l'algorithme est en échec, il utilise le retour en arrière (backtrack) pour
 #image("assets/résolution/4.svg") #pagebreak()
 #image("assets/résolution/5.svg")
 
-== SLD-résolution (échec)
+== Prolog : SLD-résolution par l'exemple
 
 #image("assets/résolution-échec/1.svg") #pagebreak()
 #image("assets/résolution-échec/2.svg") #pagebreak()
@@ -49,7 +49,7 @@ Si l'algorithme est en échec, il utilise le retour en arrière (backtrack) pour
 #image("assets/résolution-échec/4.svg") #pagebreak()
 #image("assets/résolution-échec/5.svg") #pagebreak()
 
-== SLD-résolution avec backtrack
+== Prolog : SLD-résolution avec backtrack par l'exemple
 
 #image("assets/résolution-synthèse/1.svg") #pagebreak()
 #image("assets/résolution-synthèse/2.svg") #pagebreak()
@@ -65,7 +65,7 @@ Si l'algorithme est en échec, il utilise le retour en arrière (backtrack) pour
 #image("assets/résolution-synthèse/8.svg") 
 // Parler de synthèse de terme par opposition à l'héritage de terme
 
-== Exemple Prolog
+== Prolog : Exemple
 
 #stickybox(
   tape: false,
@@ -74,18 +74,13 @@ Si l'algorithme est en échec, il utilise le retour en arrière (backtrack) pour
 femme(anne).
 parent(anne, paul).
 parent(anne, magali).
-
 mere(X,Y) :- femme(X), parent(X,Y).
 ```
 ]
 
-#pause
+#pause $forall$ `X`, $forall$ `Y`,  `mere(X,Y)` est vrai si `femme(X)` et `parent(X,Y)` sont vrais.
 
-$forall$ `X`, $forall$ `Y`,  `mere(X,Y)` est vrai si `femme(X)` et `parent(X,Y)` sont vrais.
-
-#pause
-
-#stickybox(
+#pause #stickybox(
   tape: false,
 )[
 ```Prolog
@@ -93,11 +88,9 @@ $forall$ `X`, $forall$ `Y`,  `mere(X,Y)` est vrai si `femme(X)` et `parent(X,Y)`
 ``` 
 ]
    
-`mere(anne,paul)` ? Question fermée et vrai !
+#pause `mere(anne,paul)` ? Question fermée et vrai !
 
-#pause
-
-#stickybox(
+#pause #stickybox(
   tape: false,
 )[
 ```Prolog
@@ -105,30 +98,4 @@ $forall$ `X`, $forall$ `Y`,  `mere(X,Y)` est vrai si `femme(X)` et `parent(X,Y)`
 ``` 
 ]
    
-$exists$ `P`, `mere(anne,P)` ? Question ouverte avec *$sigma = {P arrow.r.bar "paul"}$* ou *$sigma = {P arrow.r.bar "magali"}$*
-
-== Cas de l'égalité
-
-Egalité structurelle induite par la règle:
-
-#pause
-#stickybox(
-         tape: false,
-)[
-```prolog
-equals(X,Y) :- X = Y.
-```
-]
-
-#v(1em)
-
-#pause
-Qui peut être en fait remplacée par l'assertion:
-
-#stickybox(
-         tape: false,
-)[
-```prolog
-equals(X,X).
-```
-]
+#pause $exists$ `P`, `mere(anne,P)` ? Question ouverte avec *$sigma = {P arrow.r.bar "paul"}$* ou *$sigma = {P arrow.r.bar "magali"}$*

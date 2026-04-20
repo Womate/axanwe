@@ -1,6 +1,6 @@
-#import "@preview/touying:0.6.2": *
+#import "@preview/touying:0.7.1": *
 
-== Principe d'unification
+== Unification : Principe
 
 #table(
   columns: (auto, auto),
@@ -15,35 +15,51 @@ termes identiques.
 Une telle substitution est notée *$sigma$*]
 )
 
-== Principe d'unification
+== Unification vs. Filtrage
+
+#pause#alternatives[
+$triangle.filled.small.r$ le motif ne peut contenir de variables répétées, p.ex. *`f(X,X)`* est interdit. 
+
+$triangle.filled.small.r$ Pour sa part, le terme filtré ne doit pas contenir de variables: il est dit fermé. 
+][
+$triangle.filled.small.r$ tout terme peut contenir des variables répétées, p.ex. *`f(X,X)`*. 
+
+$triangle.filled.small.r$ Pour sa part, le terme filtré ne doit pas contenir de variables: il est dit fermé. 
+][
+$triangle.filled.small.r$ tout terme peut contenir des variables répétées, p.ex. *`f(X,X)`*. 
+
+$triangle.filled.small.r$ L'unification est faite entre deux termes. Les variables sont des termes ! 
+]
+
+== Unification : Principe
 
 #image("assets/unification/6.svg")
 
-Peut-on veut unifier le terme *`f(g(Y,b),Y)`* avec le terme *`f(X,a)`* avec *`X`* et *`Y`* des variables ?
+#pause Peut-on unifier le terme *`f(g(Y,b),Y)`* avec le terme *`f(X,a)`* avec *`X`* et *`Y`* des variables ?
 
-== Principe d'unification
+== Unification : Principe
 
 #image("assets/unification/7.svg")
 
 Le foncteur de plus haut niveau est le même.
 
-== Principe d'unification
+== Unification : Principe
 
 #image("assets/unification/8.svg") #pause
 
 On a une première substitution qui émerge *$sigma = { X arrow.r.bar g(Y, b) }$*.
 
-== Principe d'unification
+== Unification : Principe
 
 #image("assets/unification/9.svg") #pause
 
 Ce qui complète la substitution *$sigma = { X arrow.r.bar g(Y, b), Y arrow.r.bar a }$*.
 
-== Principe d'unification
+== Unification : Principe
 
 
-$triangle.filled.small.r$ L'unification est un processus gourmand, qui à donné lieu à pas mal de travaux. #pause
+$triangle.filled.small.r$ L'unification est un procédé incrémental, qui a donné lieu à pas mal de travaux. #pause
 
 $triangle.filled.small.r$ Traitement des termes récursifs par le *test d'occurrence*. #pause
 
-$triangle.filled.small.r$  Induire une egalité structurelle naturelle en exhibant *$sigma$*
+$triangle.filled.small.r$  Induire une égalité structurelle naturelle en exhibant *$sigma$*

@@ -1,19 +1,21 @@
-#import "@preview/touying:0.6.2": *
+#import "@preview/touying:0.7.1": *
 #import "@preview/colorful-boxes:1.4.3": *
 
-== Notations
+== Prolog : Notations
 
-*Prolog* est la fusion de l'unification et des clauses de Horn.
+*Prolog* repose sur la resolution de clauses de Horn avec le support de l'unification
 
 #pause
 #v(1em)
 
-Pour l'expression
+L'expression 
 
 $ a_1 and a_2 and ... and a_n => b $
 
 #pause
-On écrira :
+#v(1em)
+
+S'écrit avec la syntaxe dite d'Edimbourg:
 
 #stickybox(
          tape: false,
@@ -26,9 +28,9 @@ b :- a1, a2, ..., aN.
 #pause
 Qui se lit : « `b` est vrai si `a1` et vrai et `a2` et vrai jusqu'à `aN` ». 
  
-== Clauses et but 
+== Prolog : Clauses et but 
 
-#pause 
+#pause
 === Assertion
 #stickybox(
          tape: false,
@@ -37,7 +39,7 @@ Qui se lit : « `b` est vrai si `a1` et vrai et `a2` et vrai jusqu'à `aN` ».
 b.
 ```]
 
-#pause 
+#pause
 === Règle
 
 #stickybox(

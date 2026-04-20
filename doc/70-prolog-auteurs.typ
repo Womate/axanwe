@@ -1,11 +1,10 @@
-#import "@preview/touying:0.6.2": *
+#import "@preview/touying:0.7.1": *
 
 == Prolog
 #set page(background: image("assets/prolog/extrait-article.png", width: 130%, height: 130%))
 
 #table(
   columns: (auto, auto),
-  inset: 10pt,
   align: (right,left),
   stroke: none,
   image("assets/prolog/A-Colmerauer_web-800x423.jpg", width: 67%),

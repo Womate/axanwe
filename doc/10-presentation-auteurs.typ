@@ -1,4 +1,4 @@
-#import "@preview/touying:0.6.2": *
+#import "@preview/touying:0.7.1": *
 #import "@preview/colorful-boxes:1.4.3": *
 
 == Frédéric Cabestre
@@ -8,7 +8,7 @@
   inset: 10pt,
   align: (right,left),
   stroke: none,
-  image("assets/authors/Moa.png", height:50%),
+  image("assets/authors/f.cabestre.png", height:50%),
   [
         #pause Artisan du logiciel revendiqué, issu du monde académique.
 
@@ -16,29 +16,9 @@
 
         #link("https://www.bravas.io")[Bravas] est un système de gestion unifiée des appareils, des identités et de la sécurité, conçue pour les PME.
 
-        #pause Bravas vient d'être acquis par #link("https://remote.com/")[Remote], solution de RH et de paie international.
+        #pause Bravas vient d'être acquis par #link("https://remote.com/")[Remote], solution de RH et de paie internationale.
   ]
 )
-/*
-== Frédéric Cabestre
-
-#table(
-  columns: (auto, auto),
-  inset: 10pt,
-  align: (right,left),
-  stroke: none,
-  image("assets/authors/Moi.png", height:50%),
-  [
-        #pause Artisan du logiciel revendiqué, issu du monde académique.
-
-        #pause *Mobile Device Management*
-
-        #link("https://www.bravas.io")[Bravas] est un système de gestion unifiée des appareils, des identités et de la sécurité, conçue pour les PME.
-
-        #pause Bravas vient d'être acquis par #link("https://remote.com/")[Remote], solution de RH et de paie international.
-  ]
-)
-*/
 
 == Didier Plaindoux
 
@@ -50,7 +30,7 @@
   image("assets/authors/d.plaindoux.png", height:50%),
   [
         #pause *Système Expert en Prolog*
-        
+       
         #link("https://app.credifix.com")[Crédifix] est un Système de mise en relation et de négociation immobilière intégrant 
         des critères de durabilité. #pause
 

@@ -1,4 +1,4 @@
-#import "@preview/touying:0.6.2": *
+#import "@preview/touying:0.7.1": *
 
 == Logique du premier ordre
 
@@ -7,42 +7,44 @@
   inset: 10pt,
   align: (right,left),
   stroke: none,
-  image("assets/prédicats/Frege.jpg"),
+  image("assets/prédicats/Frege.jpg", height: 70%),
   [
     La logique du premier ordre à été proposée par #link("https://fr.wikipedia.org/wiki/Gottlob_Frege")[Gottlob Frege],
     un logicien de la fin du XIX#super[e] siècle. 
     
-    C'est un système formel dont l'objectif est de décrire des énoncés et de pouvoir raisonner dessus.
+    #pause C'est un système formel dont l'objectif est de décrire des énoncés et de pouvoir raisonner dessus.
+
+    #pause On parle aussi de *calcul des prédicats du premier ordre*.
   ]
 )
 
-== Logique du premier ordre: définition
+== Logique du premier ordre : définition
 
-*Langage des termes*
-#block[#h(1em) $X in "Variables", f in "Symbole"_f$ ]
-#block[#h(1em) $t ::= X | f | f(t_1,...,t_n)$ ]
+#pause $triangle.filled.small.r$ Langage des termes
+#block[#h(2em) $X in "Variables", f in "Symbole"_f$ ]
+#block[#h(2em) $t ::= X | f | f(t_1,...,t_n)$ ]
 
-#pause
-*Langage des prédicats*
-#block[#h(1em) $p in "Symbole"_P$ ]
-#block[#h(1em) $e ::= not e | e_1 and e_2 | e_1 or e_2 | e_1 arrow.r.double e_2 | p | p(t_1,...,t_n) | forall X.e | exists X.e$ ]
+#pause $triangle.filled.small.r$ Langage des prédicats
+#block[#h(2em) $p in "Symbole"_P$ ]
+#block[#h(2em) $e ::= not e | e_1 and e_2 | e_1 or e_2 | e_1 arrow.r.double e_2 | p | p(t_1,...,t_n) | forall X.e | exists X.e$ ]
 
 #v(1em)
 #pause
-Toute personne à une mère et un père biologique:
-#block[#h(1em) $forall X.(exists Y."mere"(Y , X)) and (exists Z."pere"(Z, X))$ ]
+*Toute personne à une mère et un père biologique*:
+#block[#h(2em) $forall X.(exists Y."mere"(Y , X)) and (exists Z."pere"(Z, X))$ ]
 
-== Logique du premier ordre: raisonnement
-
-#pause
-Système formel avancée pour la manipulation d'assertions logiques: 
+== Logique du premier ordre : raisonnement
 
 #pause
-$triangle.filled.small.r$ Mise en *Forme Prénexe* par regroupement en tête des quantificateurs *$forall$* et *$exists$* 
+Système formel avancé pour la manipulation d'assertions logiques: 
 
 #pause
+$triangle.filled.small.r$ Mise en *Forme Prénexe* par regroupement en tête des quantificateurs *$forall$* et *$exists$*
+
+#pause
+$triangle.filled.small.r$ Principe de *Herbrandisation* par l'élimination des quantificateurs *$forall$* #pause ou
+
 $triangle.filled.small.r$ Principe de *Skolémisation* par l'élimination des quantificateurs *$exists$*
-
 
 #pause
 #v(1em)
@@ -53,4 +55,4 @@ $triangle.filled.small.r$ Principe de *Skolémisation* par l'élimination des qu
 $triangle.filled.small.r$ Moteur de satisfiabilité modulo théories aka Solveur SMT ou
 
 #pause
-$triangle.filled.small.r$ Limitation à un sous ensemble : les clauses de Horn !
+$triangle.filled.small.r$ Moteur limité à un sous ensemble : les clauses de Horn !

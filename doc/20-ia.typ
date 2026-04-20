@@ -1,9 +1,7 @@
-#import "@preview/touying:0.6.2": *
+#import "@preview/touying:0.7.1": *
 #import "@preview/colorful-boxes:1.4.3": *
 
 == Pourquoi un tel titre ?
-
-// 
 
 #pause
 

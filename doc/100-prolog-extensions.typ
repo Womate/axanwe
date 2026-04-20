@@ -1,14 +1,13 @@
-#import "@preview/touying:0.6.2": *
+#import "@preview/touying:0.7.1": *
 #import "@preview/colorful-boxes:1.4.3": *
 #import emoji: lightbulb
 
-== Contrôle du retour arrière
+== Extension Prolog : Contrôle du retour arrière
 
-
-Ne pas essayer des règles alternatives pour satisfaire le prédicat courant si la suite échoue.
+#pause Ne pas essayer des règles alternatives pour satisfaire le prédicat courant si la suite échoue.
 
 #pause
-$triangle.filled.small.r$ *Assertion native `!`* appelée CUT #pause  
+$triangle.filled.small.r$ *Assertion native `!`* appelée CUT #pause
 
 $triangle.filled.small.r$ *Green cut* : sa suppression ne change rien aux réponses #pause
 
@@ -21,7 +20,6 @@ $triangle.filled.small.r$ *Red cut* : sa suppression peut changer les réponses 
 femme(anne).
 parent(anne, paul) :- !.
 parent(anne, magali).
-
 mere(X,Y) :- femme(X), parent(X,Y).
 ```
 ]
@@ -38,14 +36,13 @@ mere(X,Y) :- femme(X), parent(X,Y).
    
 $exists$ `P`, `mere(anne,P)` ? Question ouverte avec *$sigma = {P arrow.r.bar "paul"}$* uniquement !
 
+== Extension Prolog : call/1
 
-== Cas du call/1
+#pause *`call(X)`* lorsque X est unifié à un atome ou un foncteur, il résoud le but en question.
 
-*`call(X)`* lorsque X est unifié à un atome ou un foncteur, lance le but en question.
+#pause #emoji.lightbulb Capacité au langage à manipuler ses termes #pause ... comme Lisp.
 
-#emoji.lightbulb Capacité au langage à manipuler ses termes #pause ... comme Lisp. #pause
-
-$triangle.filled.small.r$ Principe d'homoiconicité
+#pause $triangle.filled.small.r$ Principe d'homoiconicité
 
 #v(1em)
 
@@ -72,13 +69,13 @@ Cas d'usage d'un *Green Cut*.
 ```
 ]
 
-== Cas de la négation
+== Extension Prolog : la négation
 
-Pas d’hypothèse de *monde clos* i.e. non monotone. #pause
+#pause Pas d’hypothèse de *monde clos* i.e. non monotone. 
 
-$triangle.filled.small.r$ Combinaison de *call* et de *cut* #pause
+#pause $triangle.filled.small.r$ Combinaison de *call* et de *cut*
 
-#stickybox(
+#pause #stickybox(
          tape: false,
 )[
 ```prolog

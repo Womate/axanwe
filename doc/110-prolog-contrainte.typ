@@ -1,7 +1,7 @@
-#import "@preview/touying:0.6.2": *
+#import "@preview/touying:0.7.1": *
 #import "@preview/colorful-boxes:1.4.3": *
 
-== Cas des contraintes
+== Extension Prolog : les contraintes
 
 #table(
   columns: (auto, auto),
@@ -12,15 +12,17 @@
   [
     La  programmation par contraintes: #pause
 
-    $triangle.filled.small.r$ est une extension de la SLD-résolution classique et #pause
+    $triangle.filled.small.r$ Extension de la SLD-résolution classique #pause en
       
-    $triangle.filled.small.r$ intègre un solveur de contraintes. #pause
+    $triangle.filled.small.r$ Intègrant un solveur de contraintes. #pause
     
     On parle de *CLP modulo théorie* (réels, etc.) 
   ]
 )
 
-== Résolution d'equations du second degré sur les réels
+== Extension Prolog : les contraintes par l'exemple
+
+*Résolution d'une équation de la forme* $A*x^2 + B*x + C$
 
 #stickybox(
          tape: false,

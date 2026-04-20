@@ -1,4 +1,4 @@
-#import "@preview/touying:0.6.2": *
+#import "@preview/touying:0.7.1": *
 #import "@preview/colorful-boxes:1.4.3": *
 #import "@preview/tdtr:0.5.4": *
 
@@ -9,7 +9,7 @@
     config-info(
         title: [Prolog],
         subtitle: [Un langage mature mais sous-estimé pour de l’IA symbolique !],
-        author: [Frédéric Cabestre & Didier Plaindoux],
+        author: [Frédéric Cabestre & *Didier Plaindoux*],
         date: datetime.today(),
     ),
 )
@@ -27,10 +27,16 @@
 #include "20-ia.typ"
 #include "25-convention.typ"
 
-= Fondations
+= Principe: Le filtrage de motifs
 
 #include "30-filtrage.typ"
+
+= Fondations: L'unification
+
 #include "40-unification.typ"
+
+= Fondations: La logique du premier order
+
 #include "50-logique-1er-order.typ"
 #include "60-clauses-de-horn.typ"
 
@@ -40,7 +46,7 @@
 #include "80-prolog-syntaxe.typ"
 #include "90-prolog-resolution.typ"
 
-= Prolog étendu
+= Prolog : Extensions
 
 #include "100-prolog-extensions.typ"
 #include "110-prolog-contrainte.typ"
