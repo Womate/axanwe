@@ -1,4 +1,4 @@
-#import "@preview/touying:0.7.1": *
+#import "@preview/touying:0.7.2": *
 #import "@preview/colorful-boxes:1.4.3": *
 
 == Frédéric Cabestre
@@ -29,19 +29,21 @@
   stroke: none,
   image("assets/authors/d.plaindoux.png", height:50%),
   [
-        #pause *Système Expert en Prolog*
-       
-        #link("https://app.credifix.com")[Crédifix] est un Système de mise en relation et de négociation immobilière intégrant 
-        des critères de durabilité. #pause
-
-        *Système Distribué et Acteurs*
+        #pause *Système Distribué et modèle Acteur 🚀*
         
         #link("https://www.kaptngo.com")[Akawan Kaptngo] est un système distribué sécurisé pour des exécutions
-        décentralisées avec des communications optimisées. #pause 
+        décentralisées avec des communications optimisées.  
         
-        *Mobilité de Code*
+        #pause *Système Expert en Prolog 🎬*
+       
+        #link("https://app.credifix.com")[Crédifix] est un système de mise en relation et de négociation immobilière intégrant 
+        des critères de durabilité.
+
+        #pause *Mobilité de Code 🚧 [OSS]*
         
-        #link("https://github.com/ephel-lang/ephel")[Ephel] est un langage OSS qui combine la programmation fonctionnelle et le calcul des ambiants
+        #link("https://github.com/ephel-lang/ephel")[Ephel] est un langage qui combine :
+        - la programmation fonctionnelle et 
+        - le calcul des ambiants
                 
   ]
 )

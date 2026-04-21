@@ -1,4 +1,4 @@
-#import "@preview/touying:0.7.1": *
+#import "@preview/touying:0.7.2": *
 #import "@preview/colorful-boxes:1.4.3": *
 #import emoji: fire
 
@@ -14,7 +14,7 @@
 
 #image("assets/unification/2.svg")
 
-#pause Ici on a un terme *`f(g(a,b),a)`* et on veut le filtrer avec *`f(X,a)`* avec *`X`* une variable. 
+#pause Ici on a un terme *`f(g(a,b),a)`* et on veut le filtrer avec *`f(X,a)`* ou *`X`* est une variable. 
 
 == Filtrage : Principe
 
@@ -32,7 +32,7 @@ Les constantes en seconde position correspondent.
  
 #image("assets/unification/5.svg")
 
-La substitution *$sigma = { X arrow.r.bar g(a,b) }$* permet de rendre le filtre identique au terme.
+#pause La substitution *$sigma = { X arrow.r.bar g(a,b) }$* permet de rendre le filtre identique au terme.
 
 == Filtrage : Et en Java ?
 
@@ -60,9 +60,7 @@ Le motif *`Succ(var p)`* permet de capturer le prédécesseur en le liant à la 
 
 == Filtrage : Limitations
 
-#pause
-$triangle.filled.small.r$ le motif ne peut contenir de variables répétées, p.ex. *`f(X,X)`* est interdit. 
+#pause $triangle.filled.small.r$ Le motif peut contenir de variables non répétées, p.ex. *`f(X,X)`* est interdit. 
 
-#pause
-$triangle.filled.small.r$ Pour sa part, le terme filtré ne doit pas contenir de variables: il est dit fermé. 
+#pause $triangle.filled.small.r$ Le terme filtré ne doit pas contenir de variables: il est dit fermé. 
 

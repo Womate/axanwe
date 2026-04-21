@@ -1,4 +1,4 @@
-#import "@preview/touying:0.7.1": *
+#import "@preview/touying:0.7.2": *
 #import "@preview/colorful-boxes:1.4.3": *
 
 == Prolog : Notations
@@ -26,7 +26,7 @@ b :- a1, a2, ..., aN.
 ]
 
 #pause
-Qui se lit : « `b` est vrai si `a1` et vrai et `a2` et vrai jusqu'à `aN` ». 
+Qui se lit : « `b` est vrai si `a1` et vrai et `a2` et vrai etc. jusqu'à `aN` ». 
  
 == Prolog : Clauses et but 
 
@@ -64,4 +64,4 @@ b :- a1, a2, ..., aN.
 #pause
 #v(1em)
 
-#align(center, block[*Comment prouve t-on un but ? Quid de la résolution ?*])
+#align(center, block[*Comment prouve-t-on un but ? Quid de la résolution ?*])

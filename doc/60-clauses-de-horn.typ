@@ -1,4 +1,4 @@
-#import "@preview/touying:0.7.1": *
+#import "@preview/touying:0.7.2": *
 
 == Clauses de Horn
 
@@ -8,8 +8,8 @@
 
 #pause Elles ont la forme : $ not a_1 or not a_2 or ... or not a_n or b $
 
-#pause  Qui ce transforme en :
+#pause Qui se transforme (loi de De Morgan) en:
 $ not (a_1 and a_2 and ... and a_n) or b $
 
-#pause  Et donc :
+#pause Et donc :
 $ a_1 and a_2 and ... and a_n => b $

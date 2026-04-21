@@ -1,4 +1,4 @@
-#import "@preview/touying:0.7.1": *
+#import "@preview/touying:0.7.2": *
 #import "@preview/colorful-boxes:1.4.3": *
 
 == Description de la règle d'emprunt capée à 35%
@@ -59,7 +59,7 @@ M = 1_000.0
 
 #pause
 
-*Proposition de mensualités à partir d'une dette $in$ \]20-25\] *
+*Proposition de mensualités à partir d'une dette $in$ \]20; 25\] *
 
 #stickybox(
          tape: false,
@@ -73,11 +73,11 @@ M = 1_000.0
 {D=0.025*M, M>800.0, M=<1000.0}
 ```
 
-== Système de type pour un $lambda$-calcul simple
+== Système de types pour un $lambda$-calcul simple
 
 #pause La notation *$Γ ⊢ M : T$*, où $Γ$ est une liste de paires de la forme 
 $ x: B$ où $x$ est une variable et $B$ un type, $M$  est un $lambda$-terme et $T$ un type,
-se lit « dans le contexte $Γ$, le terme $M$ a pour type $T$.
+se lit « dans le contexte $Γ$, le terme $M$ a pour type $T$ ».
 
 #pause #colorbox(
     title:"Représentation d'une règles de typage",
@@ -85,11 +85,11 @@ se lit « dans le contexte $Γ$, le terme $M$ a pour type $T$.
 )[
 #v(5pt)
 Une règle de typage est de la forme: *$(Γ_1 ⊢ M_1 : T_1 #h(5pt) dots #h(5pt) Γ_n ⊢ M_n : T_n) / (Γ ⊢ M : T)$*
-et doit se comprendre ainsi:  "si $Γ_1 ⊢ M_1 : T_1 #h(5pt) dots #h(5pt) Γ_n ⊢ M_n : T_n$ alors $Γ ⊢ M : T$".
+et doit se comprendre ainsi: « si $Γ_1 ⊢ M_1 : T_1 #h(5pt) dots #h(5pt) Γ_n ⊢ M_n : T_n$ alors $Γ ⊢ M : T$ ».
 ]
 
 #pause #colorbox(
-    title:"Règles pour le λ-calcul simplement i.e. typé λ-→",
+    title:"Règles pour le λ-calcul simplement c-a-d. typé λ-→",
     color:"green",
 )[
 $
@@ -99,7 +99,7 @@ $
 $
 ]
 
-== Système de type pour un $lambda$-calcul simple
+== Système de types pour un $lambda$-calcul simple
   
 #pause
     
@@ -148,7 +148,7 @@ system(Γ ⊢ (X ⇒ Y) : (T1 → T2)) :-
     ],
 )
 
-== Système de type pour un $lambda$-calcul simple \~ Exemples
+== Système de types pour un $lambda$-calcul simple \~ Exemples
     
 *Fonction identité*
     
@@ -166,7 +166,7 @@ T = (_A→_A)
 
 #pause
 
-*Application de fonction sans connaitre les hypothèses*
+*Application de fonction sans connaître les hypothèses*
 
 #stickybox(
          tape: false,
@@ -182,7 +182,7 @@ T = (_A→_A)
 
 #pause
 
-*Fonction d'application* (réification)
+*Fonction d'application* (cas de réification)
 
 #stickybox(
          tape: false,

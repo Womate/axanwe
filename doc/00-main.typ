@@ -1,4 +1,4 @@
-#import "@preview/touying:0.7.1": *
+#import "@preview/touying:0.7.2": *
 #import "@preview/colorful-boxes:1.4.3": *
 #import "@preview/tdtr:0.5.4": *
 
@@ -7,15 +7,12 @@
 #show: metropolis-theme.with(
     aspect-ratio: "16-9",
     config-info(
-        title: [Prolog],
-        subtitle: [Un langage mature mais sous-estimé pour de l’IA symbolique !],
-        author: [Frédéric Cabestre & *Didier Plaindoux*],
-        date: datetime.today(),
+        title: [#text(size:40pt)[*Prolog*]],
+        subtitle: [#text(size:20pt)[Un langage mature mais sous-estimé pour de l’IA symbolique !]],
+        author: [#text(size:20pt)[Frédéric Cabestre & Didier Plaindoux]],
+        contact: [#text(size:18pt)[*DEVOXX France 2026*]]
     ),
 )
-
-// #set text(font:"iosevka")
-// #show math.equation: set text(font: "iosevka")
 
 #set heading(numbering: none)
 #show math.frac: it => $display(it)$
@@ -54,6 +51,8 @@
 = Prolog en action !
 
 #include "120-prolog-en-action.typ"
+
+= Pour terminer
 
 #include "130-conclusion.typ"
 

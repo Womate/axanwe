@@ -1,4 +1,4 @@
-#import "@preview/touying:0.7.1": *
+#import "@preview/touying:0.7.2": *
 #import "@preview/colorful-boxes:1.4.3": *
 #import emoji: lightbulb
 
@@ -6,14 +6,13 @@
 
 #pause Ne pas essayer des règles alternatives pour satisfaire le prédicat courant si la suite échoue.
 
-#pause
-$triangle.filled.small.r$ *Assertion native `!`* appelée CUT #pause
+#pause $triangle.filled.small.r$ *Assertion native `!`* appelée _cut_ (coupure) en anglais
 
-$triangle.filled.small.r$ *Green cut* : sa suppression ne change rien aux réponses #pause
+#pause $triangle.filled.small.r$ *Green cut* : sa suppression ne change rien aux réponses
 
-$triangle.filled.small.r$ *Red cut* : sa suppression peut changer les réponses #pause
+#pause $triangle.filled.small.r$ *Red cut* : sa suppression peut changer les réponses
 
-#stickybox(
+#pause #stickybox(
   tape: false,
 )[
 ```prolog
@@ -40,7 +39,7 @@ $exists$ `P`, `mere(anne,P)` ? Question ouverte avec *$sigma = {P arrow.r.bar "p
 
 #pause *`call(X)`* lorsque X est unifié à un atome ou un foncteur, il résoud le but en question.
 
-#pause #emoji.lightbulb Capacité au langage à manipuler ses termes #pause ... comme Lisp.
+#pause #emoji.lightbulb Capacité du langage à manipuler ses termes #pause ... comme Lisp.
 
 #pause $triangle.filled.small.r$ Principe d'homoiconicité
 
@@ -71,7 +70,7 @@ Cas d'usage d'un *Green Cut*.
 
 == Extension Prolog : la négation
 
-#pause Pas d’hypothèse de *monde clos* i.e. non monotone. 
+#pause Pas d’hypothèse de *monde clos* c-à-d. non monotone. 
 
 #pause $triangle.filled.small.r$ Combinaison de *call* et de *cut*
 

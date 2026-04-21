@@ -1,4 +1,4 @@
-#import "@preview/touying:0.7.1": *
+#import "@preview/touying:0.7.2": *
 
 == Unification : Principe
 
@@ -9,24 +9,26 @@
   stroke: none,
   image("assets/unification/Herbrand.jpg", height: 50%),
   [#link("https://fr.wikipedia.org/wiki/Jacques_Herbrand")[Jacques Herbrand] (1908-1931), mathématicien et logicien
-français, propose une méthode pour déterminer si on peut trouver une substitution telle qu'elle rende deux
+français
+ 
+#pause Il propose une méthode pour déterminer si on peut trouver une substitution telle qu'elle rende deux
 termes identiques. 
 
-Une telle substitution est notée *$sigma$*]
+#pause Une telle substitution est notée *$sigma$*]
 )
 
 == Unification vs. Filtrage
 
 #pause#alternatives[
-$triangle.filled.small.r$ le motif ne peut contenir de variables répétées, p.ex. *`f(X,X)`* est interdit. 
+$triangle.filled.small.r$ le motif peut contenir de variables non répétées, p.ex. *`f(X,X)`* est interdit. 
 
-$triangle.filled.small.r$ Pour sa part, le terme filtré ne doit pas contenir de variables: il est dit fermé. 
+$triangle.filled.small.r$ Le terme filtré ne doit pas contenir de variables: il est dit fermé. 
 ][
-$triangle.filled.small.r$ tout terme peut contenir des variables répétées, p.ex. *`f(X,X)`*. 
+$triangle.filled.small.r$ Tout terme peut contenir des variables répétées, p.ex. *`f(X,X)`*. 
 
-$triangle.filled.small.r$ Pour sa part, le terme filtré ne doit pas contenir de variables: il est dit fermé. 
+$triangle.filled.small.r$ Le terme filtré ne doit pas contenir de variables: il est dit fermé. 
 ][
-$triangle.filled.small.r$ tout terme peut contenir des variables répétées, p.ex. *`f(X,X)`*. 
+$triangle.filled.small.r$ Tout terme peut contenir des variables répétées, p.ex. *`f(X,X)`*. 
 
 $triangle.filled.small.r$ L'unification est faite entre deux termes. Les variables sont des termes ! 
 ]
@@ -58,8 +60,8 @@ Ce qui complète la substitution *$sigma = { X arrow.r.bar g(Y, b), Y arrow.r.ba
 == Unification : Principe
 
 
-$triangle.filled.small.r$ L'unification est un procédé incrémental, qui a donné lieu à pas mal de travaux. #pause
+#pause $triangle.filled.small.r$ L'unification est un procédé incrémental (sans rebroussement)
 
-$triangle.filled.small.r$ Traitement des termes récursifs par le *test d'occurrence*. #pause
+#pause $triangle.filled.small.r$ Traitement des termes récursifs par le *test d'occurrence*.
 
-$triangle.filled.small.r$  Induire une égalité structurelle naturelle en exhibant *$sigma$*
+#pause $triangle.filled.small.r$  Induit une égalité structurelle naturelle en exhibant *$sigma$*

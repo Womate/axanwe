@@ -1,4 +1,4 @@
-#import "@preview/touying:0.7.1": *
+#import "@preview/touying:0.7.2": *
 #import "@preview/colorful-boxes:1.4.3": *
 #import "@preview/tdtr:0.5.4": *
 
@@ -14,24 +14,24 @@
 mathématicien et informaticien anglais, propose un principe de résolution.
 
 #pause La résolution on la retrouve au cœur des systèmes de preuve automatiques. *Prolog* s'appuie sur une version raffinée, la
-*SLD-résolution* qui permet prouver une formule à partir d'un ensemble de *clauses de Horn*.]
+*SLD-résolution* qui permet la preuve d'une une formule à partir d'un ensemble de *clauses de Horn*.]
 )
 
 == Prolog : SLD-résolution
 
 Le processus est cyclique et suit une logique très précise :
 
-*$1$ Sélection* : choisit le premier littéral (le premier élément) de la question posée. #pause
+*$1$ Sélection* : Choisir le premier littéral (le premier élément) de la question posée. #pause
 
-*$2$ Unification* : Cherche une règle ou un fait dont la tête s'unifie avec ce littéral. #pause
+*$2$ Unification* : Chercher une règle ou un fait dont la tête s'unifie avec ce littéral. #pause
 
 *$3$ Remplacement* : Le littéral est remplacé par le corps de la règle correspondante. #pause
 
 *$4$ Répétition* : Jusqu'à ce qu'il ne reste plus rien ou qu'aucune règle ne corresponde. #pause
 
-La SLD-résolution utilise deux règles de navigation: l'ordre des littéraux et des clauses.
+La SLD-résolution utilise deux règles de navigation : l'ordre des littéraux et des clauses.
 
-Si l'algorithme est en échec, il utilise le retour en arrière (backtrack) pour revenir au dernier choix possible et essayer une autre règle.
+Lors d'échec, il rebrousse chemin (_backtrack_) jusqu'au dernier choix possible et essaye une autre règle.
 
 == Prolog : SLD-résolution par l'exemple
 

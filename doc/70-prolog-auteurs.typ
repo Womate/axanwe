@@ -1,4 +1,4 @@
-#import "@preview/touying:0.7.1": *
+#import "@preview/touying:0.7.2": *
 
 == Prolog
 #set page(background: image("assets/prolog/extrait-article.png", width: 130%, height: 130%))
