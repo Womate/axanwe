@@ -24,14 +24,14 @@
 
 *Résolution d'une équation de la forme* $A*x^2 + B*x + C$
 
-#stickybox(
+#pause #stickybox(
          tape: false,
 )[
 ```prolog
 :- use_module(library(clpr)).
 ```
-] #pause
-#stickybox(
+] 
+#pause #stickybox(
          tape: false,
 )[
 ```prolog
