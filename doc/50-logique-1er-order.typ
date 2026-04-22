@@ -38,11 +38,9 @@
 #pause
 Système formel avancé pour la manipulation d'expressions logiques: 
 
-#pause
-$triangle.filled.small.r$ Mise en *Forme Prénexe* par regroupement en tête des quantificateurs *$forall$* et *$exists$*
+#pause $triangle.filled.small.r$ Mise en *Forme Prénexe* par regroupement en tête des quantificateurs *$forall$* et *$exists$*
 
-#pause
-$triangle.filled.small.r$ Principe de *Herbrandisation* par l'élimination des quantificateurs *$forall$* #pause ou
+#pause $triangle.filled.small.r$ Principe de *Herbrandisation* par l'élimination des quantificateurs *$forall$* #pause ou
 
 $triangle.filled.small.r$ Principe de *Skolémisation* par l'élimination des quantificateurs *$exists$*
 

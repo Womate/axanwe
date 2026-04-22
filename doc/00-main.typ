@@ -10,7 +10,8 @@
         title: [#text(size:40pt, fill:orange ,weight: "bold")[Prolog]],
         subtitle: [#text(size:20pt)[Un langage mature mais sous-estimé pour de l’IA symbolique !]],
         author: [#text(size:20pt)[Frédéric Cabestre & Didier Plaindoux]],
-        contact: [#v(1em) #text(size:18pt, fill:orange)[DEVOXX France 2026]]
+        contact: [#v(1em) #text(size:18pt, fill:orange)[DEVOXX France 2026]
+                  #v(10em) #text(size:10pt, fill:orange)[Document élaboré avec Typst]]
     ),
 )
 
@@ -37,7 +38,7 @@
 #include "50-logique-1er-order.typ"
 #include "60-clauses-de-horn.typ"
 
-= Programmation Logique
+= Programmation en Logique
 
 #include "70-prolog-auteurs.typ"
 #include "80-prolog-syntaxe.typ"

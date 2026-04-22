@@ -14,7 +14,10 @@
 mathématicien et informaticien anglais, propose un principe de résolution.
 
 *Prolog* s'appuie sur la *résolution SLD* qui permet la preuve
-d'une une formule à partir d'un ensemble de *clauses de Horn*.]
+d'une formule à partir d'un ensemble de *clauses de Horn*.
+
+*SLD* pour Selected, Linear et Definite.
+]
 )
 
 == Prolog : SLD-résolution
