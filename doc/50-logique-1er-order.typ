@@ -40,6 +40,8 @@ Système formel avancé pour la manipulation d'expressions logiques:
 
 #pause $triangle.filled.small.r$ Mise en *Forme Prénexe* par regroupement en tête des quantificateurs *$forall$* et *$exists$*
 
+#h(1em) Formalisé par David Hilbert et Wilhelm Ackermann en 1928
+
 #pause $triangle.filled.small.r$ Principe de *Herbrandisation* par l'élimination des quantificateurs *$forall$* #pause ou
 
 $triangle.filled.small.r$ Principe de *Skolémisation* par l'élimination des quantificateurs *$exists$*

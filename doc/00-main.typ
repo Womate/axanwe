@@ -8,10 +8,9 @@
     aspect-ratio: "16-9",
     config-info(
         title: [#text(size:40pt, fill:orange ,weight: "bold")[Prolog]],
-        subtitle: [#text(size:20pt)[Un langage mature mais sous-estimé pour de l’IA symbolique !]],
+        subtitle: [#v(0.5em)#text(size:20pt)[Un langage mature mais sous-estimé pour de l’IA symbolique !]],
         author: [#text(size:20pt)[Frédéric Cabestre & Didier Plaindoux]],
-        contact: [#v(1em) #text(size:18pt, fill:orange)[DEVOXX France 2026]
-                  #v(10em) #text(size:10pt, fill:orange)[Document élaboré avec Typst]]
+        contact: [#v(10em) #text(size:18pt, fill:orange, weight: "bold")[DEVOXX France 2026]]
     ),
 )
 
