@@ -4,14 +4,14 @@
 
 == Extension Prolog : Contrôle du retour arrière
 
-#pause Ne pas essayer des règles alternatives pour satisfaire le prédicat courant si la suite échoue.
+#pause Ne pas essayer des règles alternatives pour satisfaire le prédicat courant.
 
 #pause $triangle.filled.small.r$ *Assertion native `!`* appelée _cut_ (coupure) en anglais
 
 #pause $triangle.filled.small.r$ *Green cut* : sa suppression ne change rien aux réponses
 
 #pause $triangle.filled.small.r$ *Red cut* : sa suppression peut changer les réponses
-
+/*
 #pause #stickybox(
   tape: false,
 )[
@@ -34,6 +34,7 @@ mere(X,Y) :- femme(X), parent(X,Y).
 ]
    
 $exists$ `P`, `mere(anne,P)` ? Question ouverte avec *$sigma = {P arrow.r.bar "paul"}$* uniquement !
+*/
 
 == Extension Prolog : call/1
 

@@ -32,7 +32,7 @@ Les constantes en seconde position correspondent.
  
 #image("assets/unification/5.svg")
 
-#pause La substitution *$sigma = { X arrow.r.bar g(a,b) }$* permet de rendre le filtre identique au terme.
+#pause Associe la variable *X*  au terme *g(a,b)* afin de rendre le filtre identique au terme.
 
 == Filtrage : Et en Java ?
 
@@ -60,7 +60,7 @@ Le motif *`Succ(var p)`* permet de capturer le prédécesseur en le liant à la 
 
 == Filtrage : Limitations
 
-#pause $triangle.filled.small.r$ Le motif peut contenir de variables non répétées, p.ex. *`f(X,X)`* est interdit. 
+#pause $triangle.filled.small.r$ Le motif peut contenir des variables non répétées, p.ex. *`f(X,X)`* est interdit. 
 
 #pause $triangle.filled.small.r$ Le terme filtré ne doit pas contenir de variables: il est dit fermé. 
 

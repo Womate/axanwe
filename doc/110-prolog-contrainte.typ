@@ -20,6 +20,7 @@
   ]
 )
 
+/*
 == Extension Prolog : les contraintes par l'exemple
 
 *Résolution d'une équation de la forme* $A*x^2 + B*x + C$
@@ -76,7 +77,4 @@ S = [- 3/(2*0.75)]
 S = [],
 {A>0.75, _=9.0-12.0*A}.
 ```
-
-
-
-
+*/

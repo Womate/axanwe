@@ -57,11 +57,11 @@ b :- a1, a2, ..., aN.
          tape: false,
 )[
 ```prolog
-?- a1, a2, ..., aN.
+?- c1, c2, ..., cM.
 ```
 ]
 
 #pause
 #v(1em)
 
-#align(center, block[*Comment prouve-t-on un but ? Quid de la résolution ?*])
+#align(center, block[*Comment prouve-t-on un but ? #pause Quid de la résolution ?*])

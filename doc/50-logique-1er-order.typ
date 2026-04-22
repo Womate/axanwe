@@ -48,7 +48,7 @@ $triangle.filled.small.r$ Principe de *Skolémisation* par l'élimination des qu
 
 #pause
 #v(1em)
-*Transformations mécanisables mais quid de la Résolution ?*
+*Transformations mécanisables #pause mais quid de la Résolution ?*
 #v(1em)
 
 #pause

@@ -20,8 +20,8 @@
 
 #title-slide()
 
-#include "10-presentation-auteurs.typ"
 #include "20-ia.typ"
+#include "10-presentation-auteurs.typ"
 #include "25-convention.typ"
 
 = Principe: Le filtrage de motifs
@@ -32,7 +32,7 @@
 
 #include "40-unification.typ"
 
-= Fondations: La logique du premier order
+= Fondations: La logique du premier ordre
 
 #include "50-logique-1er-order.typ"
 #include "60-clauses-de-horn.typ"
@@ -55,5 +55,3 @@
 = Pour terminer
 
 #include "130-conclusion.typ"
-
-#title-slide()

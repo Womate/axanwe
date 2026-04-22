@@ -10,12 +10,17 @@
 L’établissement bancaire détermine votre *capacité* d'endettement en appliquant à vos *ressources* un taux d'*effort* qui ne doit, en principe, *pas dépasser 35 %*.
 ]
 
-#stickybox(
+#pause #stickybox(
         tape: false,
 )[
 ```prolog
 :- use_module(library(clpr)).
-
+```
+]
+#pause #stickybox(
+        tape: false,
+)[
+```prolog
 detteMaximumPourcent(35).
 
 dette(famille(Ressources),mensualite(Capacite),dettePourcent(Effort)) :-

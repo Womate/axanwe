@@ -1,32 +1,28 @@
 #import "@preview/touying:0.7.2": *
 #import "@preview/colorful-boxes:1.4.3": *
+#import themes.metropolis: *
 
-== Quelques réalisations et variantes
+== Domaines d'application
 
-#pause $triangle.filled.small.r$ #link("https://sicstus.sics.se/")[Sicstus Prolog] (Commercial)
+#pause #align(center)[*"On dispose de règles du jeu ? on peut alors valider voire inférer des solutions !"*]
 
-#pause $triangle.filled.small.r$ #link("https://www.swi-prolog.org/")[SWI-Prolog] (Open Source) avec un portage en WASM
+#v(1em)
 
-#pause $triangle.filled.small.r$ #link("https://www.gprolog.org/")[GNU Prolog] (Open Source)
+#pause $triangle.filled.small.r$ Analyse de la Langue Naturelle (NLP)
 
-#pause $triangle.filled.small.r$ #link("https://github.com/LPCIC/elpi/")[Embeddable $lambda$Prolog Interpreter] (Open Source)
+#h(1em) Analyse syntaxique de phrases, extraction d'entités
 
-#pause $triangle.filled.small.r$ #link("https://www.visual-prolog.com")[Visual Prolog] (Commercial)
+#pause $triangle.filled.small.r$ Système expert et Aide à la Décision
 
-#pause $triangle.filled.small.r$ #link("https://picat-lang.org")[Picat] (Freeware)
+#h(1em) Moteur de diagnostic, Système de conformité etc.
 
-== Quelques références
+#pause $triangle.filled.small.r$ Problèmes de Satisfaction de Contraintes
 
-$triangle.filled.small.r$ #link("http://alain.colmerauer.free.fr/alcol/ArchivesPublications/HommeMachineFr/HoMa.pdf")[Un système de communication homme-machine en français] Alain Colmerauer, Henri Kanoui, Philippe Roussel & Robert Pasero
+#h(1em) Optimisation logistique, Emplois du temps, #link("https://github.com/rust-lang/chalk")[Chalk]
 
-$triangle.filled.small.r$ #link("https://cliplab.org/~logalg/doc/The_Art_of_Prolog.pdf")[The Art of Prolog] - Leon Sterling & Ehud Shapiro
+#pause $triangle.filled.small.r$ Gestion de Bases de Données Graphes
 
-$triangle.filled.small.r$ #link("https://www.sciencedirect.com/science/article/pii/0743106694900337?via%3Dihub")[Constraint Logic Programming] - Joxan Jaffar & Michael J. Maher
-
-$triangle.filled.small.r$ #link("https://web.archive.org/web/20031004100957/http://www.vanx.org/archive/wam/wambook.pdf")[Warren’s Abstract Machine - A TUTORIAL RECONSTRUCTION] - Hassan Aït-Kaci
-
-$triangle.filled.small.r$ #link("https://www.lix.polytechnique.fr/Labo/Dale.Miller/lProlog/proghol/extract.html")[Programming with Higher-Order Logic] - Dale Miller & Gopalan Nadathur.
-
+#h(1em) Réseaux sociaux, Généalogie etc.
 
 == Conclusion
 
@@ -43,3 +39,37 @@ $triangle.filled.small.r$ #link("https://www.lix.polytechnique.fr/Labo/Dale.Mill
 #pause $triangle.filled.small.r$ Extension au paradigme objet 
 
 #pause $triangle.filled.small.r$ Extension au $lambda$-calcul
+
+== Quelques réalisations et variantes
+
+$triangle.filled.small.r$ #link("https://sicstus.sics.se/")[Sicstus Prolog] (Commercial)
+
+$triangle.filled.small.r$ #link("https://www.swi-prolog.org/")[SWI-Prolog] (Open Source) avec un portage en WASM
+
+$triangle.filled.small.r$ #link("https://www.gprolog.org/")[GNU Prolog] (Open Source)
+
+$triangle.filled.small.r$ #link("https://github.com/LPCIC/elpi/")[Embeddable $lambda$Prolog Interpreter] (Open Source)
+
+$triangle.filled.small.r$ #link("https://www.visual-prolog.com")[Visual Prolog] (Commercial)
+
+$triangle.filled.small.r$ #link("https://picat-lang.org")[Picat] (Freeware)
+
+== Quelques références
+
+$triangle.filled.small.r$ #link("http://alain.colmerauer.free.fr/alcol/ArchivesPublications/HommeMachineFr/HoMa.pdf")[Un système de communication homme-machine en français] Alain Colmerauer, Henri Kanoui, Philippe Roussel & Robert Pasero
+
+$triangle.filled.small.r$ #link("https://cliplab.org/~logalg/doc/The_Art_of_Prolog.pdf")[The Art of Prolog] - Leon Sterling & Ehud Shapiro
+
+$triangle.filled.small.r$ #link("https://www.sciencedirect.com/science/article/pii/0743106694900337?via%3Dihub")[Constraint Logic Programming] - Joxan Jaffar & Michael J. Maher
+
+$triangle.filled.small.r$ #link("https://web.archive.org/web/20031004100957/http://www.vanx.org/archive/wam/wambook.pdf")[Warren’s Abstract Machine - A TUTORIAL RECONSTRUCTION] - Hassan Aït-Kaci
+
+$triangle.filled.small.r$ #link("https://www.lix.polytechnique.fr/Labo/Dale.Miller/lProlog/proghol/extract.html")[Programming with Higher-Order Logic] - Dale Miller & Gopalan Nadathur.
+
+#focus-slide[
+    #align(center)[#image("./assets/conclusion/qrcode.png", width: 20%)
+    https://github.com/Womate/axanwe
+    ]
+]
+
+

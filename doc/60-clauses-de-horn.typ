@@ -2,7 +2,7 @@
 
 == Clauses de Horn
 
-#pause Disjonctions constituées de *ou* et de *négation* ayant au plus un litéral positif.
+#pause Expressions constituées de *ou* et de *négation* ayant au plus un litéral positif.
 
 #v(1em)
 
@@ -11,5 +11,5 @@
 #pause Qui se transforme (loi de De Morgan) en:
 $ not (a_1 and a_2 and ... and a_n) or b $
 
-#pause Et donc :
+#pause Qui se transforme en:
 $ a_1 and a_2 and ... and a_n => b $

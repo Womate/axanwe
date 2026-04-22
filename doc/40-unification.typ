@@ -20,13 +20,13 @@ termes identiques.
 == Unification vs. Filtrage
 
 #pause#alternatives[
-$triangle.filled.small.r$ le motif peut contenir de variables non répétées, p.ex. *`f(X,X)`* est interdit. 
+$triangle.filled.small.r$ _le motif peut contenir des variables non répétées, p.ex. *`f(X,X)`* est interdit._ 
 
-$triangle.filled.small.r$ Le terme filtré ne doit pas contenir de variables: il est dit fermé. 
+$triangle.filled.small.r$ _Le terme filtré ne doit pas contenir de variables: il est dit fermé._ 
 ][
 $triangle.filled.small.r$ Tout terme peut contenir des variables répétées, p.ex. *`f(X,X)`*. 
 
-$triangle.filled.small.r$ Le terme filtré ne doit pas contenir de variables: il est dit fermé. 
+$triangle.filled.small.r$ _Le terme filtré ne doit pas contenir de variables: il est dit fermé._
 ][
 $triangle.filled.small.r$ Tout terme peut contenir des variables répétées, p.ex. *`f(X,X)`*. 
 
