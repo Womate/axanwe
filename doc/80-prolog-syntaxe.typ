@@ -26,7 +26,7 @@ b :- a1, a2, ..., aN.
 ]
 
 #pause
-Qui se lit : « `b` est vrai si `a1` et vrai et `a2` et vrai etc. jusqu'à `aN` ». 
+Qui se lit : « `b` est vrai si `a1` est vrai et `a2` est vrai etc. jusqu'à `aN` est vrai ».
  
 == Prolog : Clauses et but 
 
